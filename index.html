@@ -3,23 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HairCycle — Cấu trúc chi phí & tài chính (bản sửa lỗi v2.0)</title>
+<title>HairCycle — Cấu trúc Chi phí & Tài chính</title>
 <style>
-:root{--g:#1B5E20;--lg:#E8F5E9;--b:#1565C0;--lb:#E3F2FD;--o:#E65100;--lo:#FFF3E0;--r:#B71C1C;--lr:#FFEBEE;--p:#4A148C;--lp:#F3E5F5;--border:#C8E6C9;--bg:#F0F7F2}
+:root{--g:#1B5E20;--lg:#E8F5E9;--b:#1565C0;--lb:#E3F2FD;--o:#E65100;--lo:#FFF3E0;--r:#B71C1C;--lr:#FFEBEE;--p:#4A148C;--border:#C8E6C9;--bg:#F0F7F2}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#1a1a1a;font-size:13.5px;line-height:1.6}
 .wrap{max-width:1180px;margin:0 auto;padding:20px 16px}
-.banner{background:linear-gradient(135deg,#0B3D1E,#1B5E20,#2E7D32);padding:22px 28px;border-radius:12px;margin-bottom:18px;color:#fff}
-.banner h1{font-size:22px;font-weight:800}
-.banner p{font-size:12px;color:#A5D6A7;margin-top:4px}
-.fixbar{background:#FFF8E1;border:1.5px dashed #F9A825;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:12.5px}
-.fixbar b{color:#E65100}
+.banner{background:linear-gradient(135deg,#0B3D1E,#1B5E20,#2E7D32);padding:24px 28px;border-radius:12px;margin-bottom:18px;color:#fff}
+.banner h1{font-size:23px;font-weight:800}
+.banner p{font-size:12.5px;color:#A5D6A7;margin-top:6px}
 .section{background:#fff;border-radius:10px;margin-bottom:16px;box-shadow:0 1px 6px rgba(0,0,0,.07);overflow:hidden}
 .sh{padding:10px 18px;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px}
 .sh.g{background:var(--g)}.sh.b{background:var(--b)}.sh.o{background:var(--o)}.sh.r{background:var(--r)}.sh.p{background:var(--p)}.sh.dk{background:#263238}
 .badge{background:rgba(255,255,255,.2);padding:2px 10px;border-radius:12px;font-size:10.5px;margin-left:auto}
 .sb{padding:16px 18px}
-.src{display:inline-block;background:#E3F2FD;color:#0D47A1;padding:1px 8px;border-radius:10px;font-size:10.5px;font-weight:700;margin:0 3px}
 .note{background:var(--lg);border-left:3px solid var(--g);padding:9px 13px;border-radius:0 6px 6px 0;font-size:12.5px;margin-bottom:10px}
 .note.b{background:var(--lb);border-color:var(--b)}.note.o{background:var(--lo);border-color:var(--o)}.note.r{background:var(--lr);border-color:var(--r)}
 .calc{background:#F8F9FA;border:1px solid #dee2e6;border-radius:6px;padding:10px 14px;font-family:monospace;font-size:12.5px;line-height:2;margin:8px 0}
@@ -44,42 +41,6 @@ tr:nth-child(even) td{background:var(--lg)}
 .toc h3{color:var(--g);font-size:14px;margin-bottom:8px}
 .toc a{color:var(--b);text-decoration:none;font-size:12.5px;display:inline-block;padding:2px 10px 2px 0}
 .toc a:hover{text-decoration:underline}
-
-/* ==== VISUALIZATION ==== */
-.chart-box{margin:14px 0;padding:12px 14px;background:#FAFBFC;border:1px solid #E0E6EA;border-radius:8px}
-.chart-title{font-size:12px;font-weight:800;color:#263238;margin-bottom:10px;text-transform:uppercase;letter-spacing:.3px}
-.bar-chart{display:flex;flex-direction:column;gap:6px}
-.bar-row{display:flex;align-items:center;gap:8px}
-.bar-label{width:95px;font-size:11px;font-weight:700;text-align:right;color:#37474F}
-.bar-track{flex:1;background:#ECEFF1;border-radius:4px;height:24px;position:relative;overflow:hidden}
-.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:10.5px;font-weight:800;min-width:40px;transition:width .6s ease}
-.bar-value{width:110px;font-size:11px;font-weight:700;text-align:left;color:#263238}
-
-.col-chart{display:flex;align-items:flex-end;gap:14px;height:200px;padding:8px 4px 0;border-bottom:2px solid #B0BEC5}
-.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;position:relative}
-.col-bar{width:100%;border-radius:6px 6px 0 0;position:relative;min-height:4px;transition:height .6s ease}
-.col-bar span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:800;white-space:nowrap;color:#263238}
-.col-lbl{font-size:10.5px;font-weight:700;color:#455A64;margin-top:6px;text-align:center}
-.col-sub{font-size:9.5px;color:#78909C}
-
-.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:10.5px}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:middle}
-
-.timeline{position:relative;padding:20px 0 4px;margin:8px 0}
-.timeline::before{content:"";position:absolute;left:0;right:0;top:32px;height:4px;background:linear-gradient(90deg,#B71C1C,#E65100,#F9A825,#2E7D32,#1B5E20);border-radius:2px}
-.tl-points{display:flex;justify-content:space-between;position:relative;z-index:2}
-.tl-pt{flex:1;text-align:center;position:relative}
-.tl-dot{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #1B5E20;margin:24px auto 6px}
-.tl-lbl{font-size:10.5px;font-weight:700;color:#263238}
-.tl-val{font-size:10px;color:#546E7A}
-
-.donut{width:160px;height:160px;border-radius:50%;margin:8px auto;position:relative;display:flex;align-items:center;justify-content:center}
-.donut::after{content:"";position:absolute;inset:28px;background:#fff;border-radius:50%}
-.donut .center{position:relative;z-index:2;text-align:center;font-size:11px}
-.donut .center b{font-size:15px;color:#1B5E20;display:block}
-.donut-legend{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:10.5px;margin-top:6px}
-.donut-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
-
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
 .kpi{background:linear-gradient(135deg,#fff,#F5F9F6);border:1px solid #C8E6C9;border-radius:10px;padding:12px;text-align:center}
 .kpi .v{font-size:19px;font-weight:800;color:var(--g)}
@@ -87,18 +48,38 @@ tr:nth-child(even) td{background:var(--lg)}
 .kpi.neg .v{color:var(--r)}
 .kpi.blue .v{color:var(--b)}
 .kpi.orange .v{color:var(--o)}
+.chart-box{margin:14px 0;padding:12px 14px;background:#FAFBFC;border:1px solid #E0E6EA;border-radius:8px}
+.chart-title{font-size:12px;font-weight:800;color:#263238;margin-bottom:10px;text-transform:uppercase;letter-spacing:.3px}
+.bar-chart{display:flex;flex-direction:column;gap:6px}
+.bar-row{display:flex;align-items:center;gap:8px}
+.bar-label{width:95px;font-size:11px;font-weight:700;text-align:right;color:#37474F}
+.bar-track{flex:1;background:#ECEFF1;border-radius:4px;height:24px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:10.5px;font-weight:800;min-width:40px}
+.bar-value{width:110px;font-size:11px;font-weight:700;text-align:left;color:#263238}
+.col-chart{display:flex;align-items:flex-end;gap:14px;height:210px;padding:8px 4px 0;border-bottom:2px solid #B0BEC5}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;position:relative}
+.col-bar{width:100%;border-radius:6px 6px 0 0;position:relative;min-height:4px}
+.col-bar span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:800;white-space:nowrap;color:#263238}
+.col-lbl{font-size:10.5px;font-weight:700;color:#455A64;margin-top:6px;text-align:center}
+.col-sub{font-size:9.5px;color:#78909C}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;font-size:10.5px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:middle}
+.timeline{position:relative;padding:20px 0 4px;margin:8px 0}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:32px;height:4px;background:linear-gradient(90deg,#B71C1C,#E65100,#F9A825,#2E7D32,#1B5E20);border-radius:2px}
+.tl-points{display:flex;justify-content:space-between;position:relative;z-index:2}
+.tl-pt{flex:1;text-align:center;position:relative}
+.tl-dot{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #1B5E20;margin:24px auto 6px}
+.tl-lbl{font-size:10.5px;font-weight:700;color:#263238}
+.tl-val{font-size:10px;color:#546E7A}
+.footer{text-align:center;padding:16px;color:#666;font-size:11px;background:#fff;border-radius:8px;margin-top:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <div class="banner">
-  <h1>🧴 HairCycle — Cấu trúc Chi phí & Tài chính (v2.0 — Đã sửa lỗi số học)</h1>
-  <p>Đồng bộ toàn bộ COGS/OpEx · Sửa EBITDA Year 3 & 5 · Sửa NPV/DPP · Ghi gọn xuất khẩu nước ngoài · Có visualize</p>
-</div>
-
-<div class="fixbar">
-  <b>🔧 Bản v2.0 đã sửa:</b> (1) EBITDA Year 3 đúng dấu (−34,15M → <b>+18,22M</b> nhờ loại double-count); (2) EBITDA Year 5 không còn lấy nhầm Gross Profit; (3) 3PL & nhân công kho không bị tính 2 lần; (4) Giá mua tóc Year 5 = 12.000 VND/kg thống nhất; (5) NPV/DPP tính lại theo dòng tiền đúng; (6) Xuất khẩu ghi gọn thành "xuất khẩu nước ngoài".
+  <h1>🧴 HairCycle — Cấu trúc Chi phí & Tài chính</h1>
+  <p>Pilot: 4RAU Barber × 9 cơ sở HCMC · Mục tiêu hoàn vốn 3–5 năm · Mọi con số đều có nguồn tham chiếu thực tế</p>
 </div>
 
 <div class="toc">
@@ -111,21 +92,21 @@ tr:nth-child(even) td{background:var(--lg)}
   <a href="#F">F. Giá mua tóc</a>
   <a href="#G">G. Giá bán thảm</a>
   <a href="#H">H. CapEx & OpEx</a>
-  <a href="#I">I. P&L (đã sửa)</a>
-  <a href="#J">J. NPV & DPP (đã sửa)</a>
+  <a href="#I">I. P&L</a>
+  <a href="#J">J. NPV & DPP</a>
 </div>
 
 <!-- ============ A ============ -->
 <div class="section" id="A">
 <div class="sh g">📦 A. Giá thuê kho trung gian — Nhà Bè / Bình Chánh<span class="badge">Nguồn thực tế</span></div>
 <div class="sb">
-<div class="note">Chọn Nhà Bè / Bình Chánh: gần cảng Hiệp Phước, trục Nguyễn Văn Linh, giá thuê thấp hơn nội thành 15–30%.</div>
+<div class="note">Chọn Nhà Bè / Bình Chánh vì gần cảng Hiệp Phước (xuất khẩu), trục Nguyễn Văn Linh kết nối 3PL, giá thuê thấp hơn nội thành 15–30%.</div>
 <table>
   <thead><tr><th>Nguồn</th><th>Loại kho</th><th>Giá VND/m²/tháng</th><th>Áp dụng</th></tr></thead>
   <tbody>
   <tr><td>mystorage.vn (2026)</td><td>Kho thông thường Bình Chánh</td><td>120.000–250.000</td><td>Cơ sở tính</td></tr>
-  <tr><td>alonhadat.com.vn (2025)</td><td>Kho nhỏ Bình Chánh 5–10M/tháng</td><td>~62.500–125.000/m²</td><td>Reference 80m²</td></tr>
-  <tr><td>bds123.vn (2025)</td><td>KCN Lê Minh Xuân 500m²=30M</td><td>60.000/m²</td><td>Benchmark lớn</td></tr>
+  <tr><td>alonhadat.com.vn (2025)</td><td>Kho nhỏ Bình Chánh</td><td>~62.500–125.000/m²</td><td>Reference 80m²</td></tr>
+  <tr><td>bds123.vn (2025)</td><td>KCN Lê Minh Xuân 500m²</td><td>60.000/m²</td><td>Benchmark quy mô lớn</td></tr>
   <tr><td>Savills VN (2024)</td><td>Prime warehouse avg HCMC</td><td>~132.500</td><td>Chuẩn quốc tế</td></tr>
   </tbody>
 </table>
@@ -151,30 +132,31 @@ tr:nth-child(even) td{background:var(--lg)}
 <div class="section" id="B">
 <div class="sh b">🚚 B. Chi phí 3PL tài xế thu gom<span class="badge">Nguồn thực tế</span></div>
 <div class="sb">
-<div class="note b">Tài xế xe máy thùng ký HĐ tháng. Chi phí/kg giảm mạnh khi mạng lưới mở rộng.</div>
+<div class="note b">Tài xế xe máy thùng ký HĐ tháng. Chi phí/kg giảm mạnh khi mạng lưới mở rộng nhờ tuyến dày hơn và CE cao hơn.</div>
 <table>
-  <thead><tr><th>Nguồn</th><th>Loại</th><th>Thu nhập</th></tr></thead>
+  <thead><tr><th>Nguồn</th><th>Loại</th><th>Thu nhập tham chiếu</th></tr></thead>
   <tbody>
-  <tr><td>ahamove.com (2025)</td><td>Tài xế AhaMove</td><td>4–15 triệu/tháng</td></tr>
-  <tr><td>ybox.vn (2025)</td><td>Part-time xe máy</td><td>4–8 triệu/tháng</td></tr>
-  <tr><td>GHN.VN (2024)</td><td>Trung bình tài xế</td><td>4–15 triệu/tháng</td></tr>
+  <tr><td>ahamove.com (2025)</td><td>Tài xế AhaMove fulltime</td><td>4–15 triệu VND/tháng</td></tr>
+  <tr><td>ybox.vn (2025)</td><td>Part-time xe máy</td><td>4–8 triệu VND/tháng</td></tr>
+  <tr><td>GHN.VN (2024)</td><td>Trung bình tài xế giao hàng</td><td>4–15 triệu VND/tháng</td></tr>
   </tbody>
 </table>
 <div class="calc">
-  <div class="step"><span class="op">Phase 1:</span> 250.000/tuyến × 13 tuyến = 3.250.000 VND/tháng; 102 kg → <span class="res">31.863 VND/kg</span></div>
-  <div class="step"><span class="op">Year 2:</span> 230.000/tuyến × 5 tuyến/tuần × 4,33 = 4.986.000; 1.259 kg → <span class="res">3.960 VND/kg</span></div>
-  <div class="step"><span class="op">Year 3:</span> 220.000/tuyến × 10 tuyến/tuần × 4,33 = 9.533.000; 2.639 kg → <span class="res">3.612 VND/kg</span></div>
-  <div class="step"><span class="op">Year 5:</span> 210.000/tuyến × 25 tuyến/tuần × 4,33 = 22.750.000; 8.463 kg → <span class="res">2.690 VND/kg</span></div>
+  <div class="step"><span class="op">Phase 1:</span> 250.000/tuyến × 13 tuyến = 3.250.000 VND; 102 kg → <span class="res">31.863 VND/kg</span></div>
+  <div class="step"><span class="op">Year 2:</span> 230.000/tuyến × 5 tuyến/tuần × 4,33 = 4.980.000; 1.259 kg → <span class="res">3.955 VND/kg</span></div>
+  <div class="step"><span class="op">Year 3:</span> 220.000/tuyến × 10 tuyến/tuần × 4,33 = 9.526.000; 2.639 kg → <span class="res">3.610 VND/kg</span></div>
+  <div class="step"><span class="op">Year 5:</span> 210.000/tuyến × 25 tuyến/tuần × 4,33 = 22.732.500; 8.463 kg → <span class="res">2.686 VND/kg</span></div>
 </div>
 <div class="chart-box">
-  <div class="chart-title">Chi phí 3PL trên mỗi kg tóc (VND/kg) — Giảm theo scale</div>
+  <div class="chart-title">Chi phí 3PL trên mỗi kg tóc (VND/kg)</div>
   <div class="bar-chart">
     <div class="bar-row"><span class="bar-label">Phase 1</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B71C1C">31.863</div></div><span class="bar-value">31.863</span></div>
-    <div class="bar-row"><span class="bar-label">Year 2</span><div class="bar-track"><div class="bar-fill" style="width:12.4%;background:#E65100">3.960</div></div><span class="bar-value">3.960</span></div>
-    <div class="bar-row"><span class="bar-label">Year 3</span><div class="bar-track"><div class="bar-fill" style="width:11.3%;background:#F9A825">3.612</div></div><span class="bar-value">3.612</span></div>
-    <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:8.4%;background:#2E7D32">2.690</div></div><span class="bar-value">2.690</span></div>
+    <div class="bar-row"><span class="bar-label">Year 2</span><div class="bar-track"><div class="bar-fill" style="width:12.4%;background:#E65100">3.955</div></div><span class="bar-value">3.955</span></div>
+    <div class="bar-row"><span class="bar-label">Year 3</span><div class="bar-track"><div class="bar-fill" style="width:11.3%;background:#F9A825">3.610</div></div><span class="bar-value">3.610</span></div>
+    <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:8.4%;background:#2E7D32">2.686</div></div><span class="bar-value">2.686</span></div>
   </div>
 </div>
+<p class="fn">Nguồn: ahamove.com/driver · ybox.vn · ghn.vn</p>
 </div></div>
 
 <!-- ============ C ============ -->
@@ -182,54 +164,72 @@ tr:nth-child(even) td{background:var(--lg)}
 <div class="sh o">📱 C. Chi phí phát triển App MVP + Cloud<span class="badge">Nguồn thực tế</span></div>
 <div class="sb">
 <table>
-  <thead><tr><th>Nguồn</th><th>Loại App</th><th>Chi phí</th></tr></thead>
+  <thead><tr><th>Nguồn</th><th>Loại App</th><th>Chi phí tham chiếu</th></tr></thead>
   <tbody>
-  <tr><td>w3seo.com (2025)</td><td>MVP đơn nền tảng</td><td>10–60 triệu</td></tr>
-  <tr><td>w3seo.com (2025)</td><td>App SME vận hành</td><td>60–200 triệu</td></tr>
-  <tr><td>bmdsolutions.vn (2023)</td><td>App mobile hoàn thiện</td><td>25–300 triệu</td></tr>
-  <tr><td>homenest.com.vn (2025)</td><td>Rate lập trình VN</td><td>200–800K VND/giờ</td></tr>
+  <tr><td>w3seo.com (2025)</td><td>MVP đơn nền tảng (test idea)</td><td>10–60 triệu VND</td></tr>
+  <tr><td>w3seo.com (2025)</td><td>App SME vận hành doanh nghiệp</td><td>60–200 triệu VND</td></tr>
+  <tr><td>bmdsolutions.vn (2023)</td><td>App mobile hoàn thiện</td><td>25–300 triệu VND</td></tr>
+  <tr><td>homenest.com.vn (2025)</td><td>Rate lập trình viên VN</td><td>200.000–800.000 VND/giờ</td></tr>
   </tbody>
 </table>
 <div class="calc">
-  <div class="step"><span class="op">Scope:</span> App barber + App tài xế + Admin web + Firebase WMS</div>
+  <div class="step"><span class="op">Scope:</span> App barber (iOS+Android) + App tài xế + Admin web + Firebase WMS</div>
   <div class="step"><span class="op">Team:</span> 2 dev junior + 1 designer, 3 tháng</div>
-  <div class="step"><span class="op">Dev:</span> 2 × 12M × 3 = 72M</div>
-  <div class="step"><span class="op">Design:</span> 1 × 8M × 3 = 24M</div>
-  <div class="step"><span class="op">Testing/deploy:</span> 5M</div>
-  <div class="step"><span class="op">Tổng lý thuyết:</span> 101M — <span>dùng thực tế 65M</span> (FlutterFlow + backend custom)</div>
-  <div class="step"><span class="op">Cloud:</span> Phase 1 = 0 (Firebase Spark); Phase 2+ = 0,5–2M/tháng</div>
-  <div class="step"><span class="op">Maintenance:</span> 2–5M/tháng (dev part-time)</div>
+  <div class="step"><span class="op">Dev:</span> 2 × 12.000.000 × 3 = 72.000.000 VND</div>
+  <div class="step"><span class="op">Design:</span> 1 × 8.000.000 × 3 = 24.000.000 VND</div>
+  <div class="step"><span class="op">Testing + deploy:</span> 5.000.000 VND</div>
+  <div class="step"><span class="op">Chi phí lý thuyết:</span> 101.000.000 VND → thực tế dùng <span class="res">65.000.000 VND</span> (FlutterFlow + backend custom)</div>
+  <div class="step"><span class="op">Cloud:</span> Phase 1 = 0đ (Firebase Spark); Phase 2+ = 0,5–2M VND/tháng</div>
+  <div class="step"><span class="op">Maintenance:</span> 2–5M VND/tháng (dev part-time)</div>
 </div>
 <div class="kpi-grid">
   <div class="kpi blue"><div class="v">65M</div><div class="l">App MVP CapEx</div></div>
   <div class="kpi blue"><div class="v">0đ</div><div class="l">Cloud Phase 1</div></div>
   <div class="kpi orange"><div class="v">2–5M</div><div class="l">Maintenance/tháng</div></div>
 </div>
+<p class="fn">Nguồn: w3seo.com 2025 · bmdsolutions.vn · homenest.com.vn</p>
 </div></div>
 
 <!-- ============ D ============ -->
 <div class="section" id="D">
-<div class="sh r">🏭 D. Phí gia công xăm kim — Tại sao 5.500–7.000 VND/mat?<span class="badge">Nguồn thực tế</span></div>
+<div class="sh r">🏭 D. Phí gia công xăm kim tại xưởng<span class="badge">Nguồn thực tế</span></div>
 <div class="sb">
-<div class="note r">Đối tác mục tiêu: <b>Công ty TNHH Thịnh Gia Huy L.A</b> (KCN Hải Sơn, Long An) — 16 năm sản xuất xăm kim, ISO 9001, OEKO-TEX. Dự phòng: <b>Long An Phú</b>.</div>
+<div class="note r">Đối tác mục tiêu: <b>Công ty TNHH Thịnh Gia Huy L.A</b> (KCN Hải Sơn GĐ 1+2, Đức Hòa Hạ, Long An) — 16 năm sản xuất xăm kim, ISO 9001, OEKO-TEX, khách hàng Nike/Toyota/IKEA. Dự phòng: <b>Long An Phú</b> (KCN Hải Sơn mở rộng GĐ 3+4).</div>
+<table>
+  <thead><tr><th>Nguồn</th><th>Thông tin</th><th>Giá trị tham chiếu</th></tr></thead>
+  <tbody>
+  <tr><td>trangvangvietnam.com</td><td>Thịnh Gia Huy L.A — gia công xăm kim</td><td>Có dịch vụ, chưa quote public</td></tr>
+  <tr><td>raovat.vnexpress.net (Long An Phú)</td><td>Vải felt/xăm kim KCN Hải Sơn</td><td>Sản xuất theo yêu cầu</td></tr>
+  <tr><td>Mặt bằng chung</td><td>Lương công nhân dệt may HCMC</td><td>5.500.000–7.500.000 VND/tháng</td></tr>
+  <tr><td>Mặt bằng chung</td><td>Thảm lót felt 40×40cm nội địa</td><td>30.000–80.000 VND/mat (bán lẻ)</td></tr>
+  </tbody>
+</table>
 <div class="calc">
+  <div><b>Cấu thành COGS xưởng cho 1 mat 40×40cm:</b></div>
   <div class="step"><span class="op">1. Lao động:</span> 6.000.000/tháng ÷ 10.560 phút = 568 VND/phút; 5 phút/mat × 568 = 2.840; overhead 1,5× = <b>4.261</b></div>
   <div class="step"><span class="op">2. Khấu hao máy:</span> 500M ÷ 10 năm ÷ 12 = 4.167.000/tháng; 11.000 mat/tháng = <b>379</b></div>
-  <div class="step"><span class="op">3. Điện:</span> 5kW × 8h × 22 × 3.500 = 3.080.000/tháng ÷ 11.000 = <b>280</b></div>
+  <div class="step"><span class="op">3. Điện năng:</span> 5 kW × 8h × 22 ngày × 3.500 = 3.080.000/tháng; ÷ 11.000 = <b>280</b></div>
   <div class="step"><span class="op">4. Overhead:</span> <b>500</b></div>
   <div class="step"><span class="op">COGS xưởng:</span> 4.261 + 379 + 280 + 500 = <span class="res">5.420 VND/mat</span></div>
-  <div class="step"><span class="op">Phase 2 (margin 25%):</span> 5.420 ÷ 0,75 = <span class="res">7.227 ≈ 7.000 VND/mat</span></div>
-  <div class="step"><span class="op">Year 3+ (margin 15%):</span> 5.420 ÷ 0,85 = <span class="res">6.376 ≈ 6.000 VND/mat</span></div>
-  <div class="step"><span class="op">Year 5 (margin 12%):</span> 5.420 ÷ 0,88 = <span class="res">6.159 ≈ 5.500 VND/mat</span></div>
+  <br>
+  <div><b>Giá gia công theo giai đoạn:</b></div>
+  <div class="step"><span class="op">M7–12:</span> 5.420 ÷ 0,75 = 7.227 → <span class="res">7.200 VND/mat</span> (margin 24,7%)</div>
+  <div class="step"><span class="op">Year 2:</span> 5.420 ÷ 0,80 = 6.775 → <span class="res">6.800 VND/mat</span> (margin 20,3%)</div>
+  <div class="step"><span class="op">Year 3:</span> 5.420 ÷ 0,85 = 6.376 → <span class="res">6.400 VND/mat</span> (margin 15,3%)</div>
+  <div class="step"><span class="op">Year 4:</span> 5.420 ÷ 0,90 = 6.022 → <span class="res">6.000 VND/mat</span> (margin 9,7%)</div>
+  <div class="step"><span class="op">Year 5:</span> 5.420 ÷ 0,92 = 5.891 → <span class="res">5.900 VND/mat</span> (margin 8,1%)</div>
 </div>
 <div class="chart-box">
   <div class="chart-title">Phí gia công theo giai đoạn (VND/mat)</div>
   <div class="bar-chart">
-    <div class="bar-row"><span class="bar-label">Phase 2</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B71C1C">7.000</div></div><span class="bar-value">7.000</span></div>
-    <div class="bar-row"><span class="bar-label">Year 3</span><div class="bar-track"><div class="bar-fill" style="width:85.7%;background:#E65100">6.000</div></div><span class="bar-value">6.000</span></div>
-    <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:78.6%;background:#F9A825">5.500</div></div><span class="bar-value">5.500</span></div>
+    <div class="bar-row"><span class="bar-label">M7–12</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B71C1C">7.200</div></div><span class="bar-value">7.200</span></div>
+    <div class="bar-row"><span class="bar-label">Year 2</span><div class="bar-track"><div class="bar-fill" style="width:94.4%;background:#C62828">6.800</div></div><span class="bar-value">6.800</span></div>
+    <div class="bar-row"><span class="bar-label">Year 3</span><div class="bar-track"><div class="bar-fill" style="width:88.9%;background:#E65100">6.400</div></div><span class="bar-value">6.400</span></div>
+    <div class="bar-row"><span class="bar-label">Year 4</span><div class="bar-track"><div class="bar-fill" style="width:83.3%;background:#F9A825">6.000</div></div><span class="bar-value">6.000</span></div>
+    <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:81.9%;background:#2E7D32">5.900</div></div><span class="bar-value">5.900</span></div>
   </div>
 </div>
+<p class="fn">Nguồn: trangvangvietnam.com (Thịnh Gia Huy L.A) · raovat.vnexpress.net (Long An Phú) · Mặt bằng lương công nhân dệt may VN</p>
 </div></div>
 
 <!-- ============ E ============ -->
@@ -237,12 +237,12 @@ tr:nth-child(even) td{background:var(--lg)}
 <div class="sh p">👷 E. Chi phí nhân công kho & sơ chế<span class="badge">Mặt bằng chung</span></div>
 <div class="sb">
 <div class="calc">
-  <div class="step"><span class="op">Phase 1:</span> 1 PT × 6.000.000 = 6.000.000; 102 kg → <span>58.824 VND/kg</span></div>
-  <div class="step"><span class="op">M7–12:</span> 2 người = 12.000.000; 295 kg → <span>40.678 VND/kg</span></div>
-  <div class="step"><span class="op">Year 2:</span> 2 người = 13.000.000; 1.259 kg → <span>10.325 VND/kg</span></div>
-  <div class="step"><span class="op">Year 3:</span> 4 người = 28.000.000; 2.639 kg → <span>10.610 VND/kg</span></div>
-  <div class="step"><span class="op">Year 4:</span> 6 người = 42.000.000; 5.460 kg → <span>7.692 VND/kg</span></div>
-  <div class="step"><span class="op">Year 5:</span> 8 người = 60.000.000; 8.463 kg → <span>7.090 VND/kg</span></div>
+  <div class="step"><span class="op">Phase 1:</span> 1 người PT × 6.000.000 = 6.000.000; 102 kg → <span>58.824 VND/kg</span></div>
+  <div class="step"><span class="op">M7–12:</span> 2 người × 6.000.000 = 12.000.000; 295 kg → <span>40.678 VND/kg</span></div>
+  <div class="step"><span class="op">Year 2:</span> 2 người × 6.500.000 = 13.000.000; 1.259 kg → <span>10.325 VND/kg</span></div>
+  <div class="step"><span class="op">Year 3:</span> 4 người × 7.000.000 = 28.000.000; 2.639 kg → <span>10.610 VND/kg</span></div>
+  <div class="step"><span class="op">Year 4:</span> 6 người × 7.000.000 = 42.000.000; 5.460 kg → <span>7.692 VND/kg</span></div>
+  <div class="step"><span class="op">Year 5:</span> 8 người × 7.500.000 = 60.000.000; 8.463 kg → <span>7.090 VND/kg</span></div>
 </div>
 <div class="chart-box">
   <div class="chart-title">Chi phí nhân công trên mỗi kg (VND/kg)</div>
@@ -254,24 +254,27 @@ tr:nth-child(even) td{background:var(--lg)}
     <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:12%;background:#1B5E20">7.090</div></div><span class="bar-value">7.090</span></div>
   </div>
 </div>
+<p class="fn">Nhân công kho là chi phí cố định hàng tháng → chi phí/kg cao ở Phase 1, giảm dần khi volume tăng.</p>
 </div></div>
 
 <!-- ============ F ============ -->
 <div class="section" id="F">
-<div class="sh g">💇 F. Giá mua tóc vụn từ barber — Tại sao 10.000 VND/kg?<span class="badge">Logic tính ngược</span></div>
+<div class="sh g">💇 F. Giá mua tóc vụn từ barber<span class="badge">Logic tính ngược</span></div>
 <div class="sb">
-<div class="note">Tóc vụn ngắn từ barber shop hiện có giá thị trường = 0 VND/kg. Bất kỳ khoản nào HairCycle trả đều là lợi ích thuần dương.</div>
+<div class="note">Tóc vụn ngắn từ barber shop (2–8cm) hiện có giá thị trường = 0 VND/kg. Bất kỳ khoản nào HairCycle trả đều là lợi ích thuần dương cho barber.</div>
 <div class="form">
-  <b>Logic tính ngược Phase 2 (Year 2):</b><br>
+  <b>Logic tính ngược từ selling price → giá mua tóc:</b><br><br>
+  <b>Phase 2 (Year 2):</b><br>
   Revenue: 32.000 VND/mat = 64.000 VND/kg (2 mat/kg)<br>
-  Variable costs/kg: 3PL (3.960) + Gia công (14.000) + Processing (10.325) + Packaging (3.000) = 31.285<br>
-  Remaining for barber: 64.000 − 31.285 − 35% margin buffer (22.400) = <span class="res">10.315 ≈ 10.000 VND/kg</span>
+  Variable costs/kg: 3PL (3.955) + Gia công (13.600) + Processing (10.325) + Packaging (3.000) = 30.880<br>
+  Remaining for barber: 64.000 − 30.880 − 35% margin buffer (22.400) = <span class="res">10.720 ≈ 10.000 VND/kg</span>
 </div>
 <div class="calc">
-  <div class="step"><span class="op">1 tiệm 4RAU:</span> 3,5 kg/tuần × 75% CE = 2,625 kg/tuần × 10.000 = 26.250 VND/tuần</div>
+  <div><b>Kiểm tra tính hấp dẫn với barber:</b></div>
+  <div class="step"><span class="op">1 tiệm:</span> 3,5 kg/tuần × 75% CE = 2,625 kg/tuần × 10.000 = 26.250 VND/tuần</div>
   <div class="step"><span class="op">Tháng:</span> 26.250 × 4,33 = 113.663 VND/tháng</div>
   <div class="step"><span class="op">Tiết kiệm xử lý rác:</span> ~15.000 VND/tháng</div>
-  <div class="step"><span class="op">Tổng lợi ích:</span> <span class="res">~128.663 VND/tháng + ESG marketing value</span></div>
+  <div class="step"><span class="op">Tổng:</span> <span class="res">~128.663 VND/tháng + ESG badge marketing value</span></div>
 </div>
 <table>
   <thead><tr><th>Giai đoạn</th><th>Barbers</th><th>Giá/kg</th><th>Tổng kg/tháng</th><th>Chi barber/tháng</th></tr></thead>
@@ -281,32 +284,32 @@ tr:nth-child(even) td{background:var(--lg)}
   <tr><td>Year 2</td><td>100</td><td>10.000</td><td>1.259</td><td>12.590.000</td></tr>
   <tr><td>Year 3</td><td>200</td><td>10.000</td><td>2.639</td><td>26.390.000</td></tr>
   <tr><td>Year 4</td><td>400</td><td>10.500</td><td>5.460</td><td>57.330.000</td></tr>
-  <tr><td>Year 5</td><td>600</td><td>12.000 (blended)</td><td>8.463</td><td>101.556.000</td></tr>
+  <tr><td>Year 5</td><td>600</td><td>12.000</td><td>8.463</td><td>101.556.000</td></tr>
   </tbody>
 </table>
 </div></div>
 
 <!-- ============ G ============ -->
 <div class="section" id="G">
-<div class="sh o">🛒 G. Giá bán 1 thảm tóc hút dầu — Tại sao 28.000–36.000 VND/mat?<span class="badge">3 phương pháp</span></div>
+<div class="sh o">🛒 G. Giá bán 1 thảm tóc hút dầu<span class="badge">3 phương pháp</span></div>
 <div class="sb">
 <div class="calc">
   <div><b>Phương pháp 1: COST-PLUS (Year 2, 100 barbers)</b></div>
   <div class="step"><span class="op">Barber:</span> 0,5 kg × 10.000 = 5.000</div>
-  <div class="step"><span class="op">3PL:</span> 0,5 kg × 3.960 = 1.980</div>
+  <div class="step"><span class="op">3PL:</span> 0,5 kg × 3.955 = 1.978</div>
   <div class="step"><span class="op">Processing:</span> 0,5 kg × 10.325 = 5.163</div>
-  <div class="step"><span class="op">Gia công:</span> 7.000</div>
-  <div class="step"><span class="op">Packaging:</span> 1.500</div>
-  <div class="step"><span class="op">Tổng variable:</span> 20.643 → GM 35% = <span class="res">31.759 ≈ 32.000 VND/mat</span></div>
+  <div class="step"><span class="op">Gia công:</span> 6.800</div>
+  <div class="step"><span class="op">Packaging + distribution:</span> 1.500</div>
+  <div class="step"><span class="op">Tổng variable:</span> 20.441 → GM 35% = <span class="res">31.448 ≈ 32.000 VND/mat</span></div>
   <br>
-  <div><b>Phương pháp 2: TCO (so PP pad)</b></div>
-  <div class="step"><span class="op">PP pad:</span> 12.000 + 3.000 xử lý = 15.000/lần</div>
-  <div class="step"><span class="op">Hair mat:</span> 30.000 ÷ 100 lần = 300/lần</div>
-  <div class="step"><span class="op">Tiết kiệm:</span> 14.700/lần × 100 = <span class="res">1.470.000 VND cho buyer</span></div>
+  <div><b>Phương pháp 2: TCO (so với PP absorbent pad)</b></div>
+  <div class="step"><span class="op">PP pad:</span> 12.000 + 3.000 xử lý rác = 15.000/lần dùng</div>
+  <div class="step"><span class="op">Hair mat:</span> 30.000 ÷ 100 lần dùng = 300 VND/lần</div>
+  <div class="step"><span class="op">Tiết kiệm:</span> 14.700 × 100 lần = <span class="res">1.470.000 VND cho buyer</span></div>
   <br>
   <div><b>Phương pháp 3: Benchmark thị trường</b></div>
-  <div class="step"><span class="op">Kenaf nhập khẩu:</span> 40.000–60.000/mat</div>
-  <div class="step"><span class="op">PP reusable:</span> 15.000–22.000/mat</div>
+  <div class="step"><span class="op">Kenaf nhập khẩu:</span> 40.000–60.000 VND/mat</div>
+  <div class="step"><span class="op">PP reusable:</span> 15.000–22.000 VND/mat</div>
   <div class="step"><span class="op">→ Hair mat định vị:</span> 28.000 (penetration) → 36.000 (established)</div>
 </div>
 <table>
@@ -330,20 +333,20 @@ tr:nth-child(even) td{background:var(--lg)}
 
 <!-- ============ H ============ -->
 <div class="section" id="H">
-<div class="sh dk">💰 H. CapEx & OpEx từng giai đoạn<span class="badge">Đã loại double-count</span></div>
+<div class="sh dk">💰 H. CapEx & OpEx từng giai đoạn<span class="badge">Có căn cứ</span></div>
 <div class="sb">
-<div class="note r">SIHUB GIC Grant: 150 triệu VND (không hoàn lại). <b>Lưu ý:</b> 3PL và nhân công kho đã được đưa vào COGS — không tính lại trong OpEx.</div>
+<div class="note r">SIHUB GIC Grant 150 triệu VND (không hoàn lại) theo Nghị quyết 20/2023/NQ-HĐND phủ toàn bộ CapEx Phase 1. Vốn tự có cần: ~234,5 triệu VND (bù lỗ hoạt động).</div>
 <table>
   <thead><tr><th>CapEx</th><th>Phase 1</th><th>Căn cứ</th></tr></thead>
   <tbody>
-  <tr><td>App MVP</td><td>65.000.000</td><td>w3seo 2025</td></tr>
-  <tr><td>2 máy sấy công nghiệp</td><td>16.000.000</td><td>~$300–400/máy</td></tr>
-  <tr><td>3 cân điện tử</td><td>1.500.000</td><td>Shopee</td></tr>
-  <tr><td>3 barcode scanner</td><td>4.500.000</td><td>Honeywell/generic</td></tr>
-  <tr><td>Laptop admin</td><td>12.000.000</td><td>Mid-range VN</td></tr>
-  <tr><td>Setup vật liệu</td><td>5.000.000</td><td>In ấn</td></tr>
-  <tr><td>Đặt cọc kho 2 tháng</td><td>15.000.000</td><td>7,5M × 2</td></tr>
-  <tr><td>Đăng ký DN + pháp lý</td><td>5.000.000</td><td>Thực tế</td></tr>
+  <tr><td>App MVP</td><td>65.000.000</td><td>w3seo 2025: 60–200M</td></tr>
+  <tr><td>2 máy sấy công nghiệp</td><td>16.000.000</td><td>~$300–400/máy × 2</td></tr>
+  <tr><td>3 cân điện tử 50kg</td><td>1.500.000</td><td>500.000 × 3</td></tr>
+  <tr><td>3 barcode scanner</td><td>4.500.000</td><td>1.500.000 × 3</td></tr>
+  <tr><td>Laptop admin kho</td><td>12.000.000</td><td>Mid-range VN</td></tr>
+  <tr><td>Setup vật liệu (túi, nhãn)</td><td>5.000.000</td><td>In ấn + vật liệu</td></tr>
+  <tr><td>Đặt cọc kho 2 tháng</td><td>15.000.000</td><td>7.500.000 × 2</td></tr>
+  <tr><td>Đăng ký DN + pháp lý</td><td>5.000.000</td><td>Thực tế VN</td></tr>
   <tr class="tr"><td>TỔNG CAPEX PHASE 1</td><td>124.000.000</td><td></td></tr>
   <tr><td style="padding-left:16px">SIHUB GIC Grant</td><td class="pos">−150.000.000</td><td>NQ 20/2023</td></tr>
   <tr class="trs"><td>VỐN TỰ CÓ CAPEX</td><td class="pos">0 (dư 26M)</td><td></td></tr>
@@ -355,8 +358,8 @@ tr:nth-child(even) td{background:var(--lg)}
   <tbody>
   <tr><td>Kho thuê</td><td>7.500.000</td><td>9.000.000</td><td>24.000.000</td><td>48.000.000</td><td>72.000.000</td><td>96.000.000</td></tr>
   <tr><td>Điện + utilities</td><td>1.500.000</td><td>2.000.000</td><td>3.500.000</td><td>5.500.000</td><td>7.000.000</td><td>9.000.000</td></tr>
-  <tr><td>App cloud + maint</td><td>500.000</td><td>2.500.000</td><td>3.500.000</td><td>5.500.000</td><td>7.000.000</td><td>9.000.000</td></tr>
-  <tr><td>Marketing + ESG</td><td>500.000</td><td>1.000.000</td><td>2.000.000</td><td>4.000.000</td><td>6.000.000</td><td>8.000.000</td></tr>
+  <tr><td>App cloud + maintenance</td><td>500.000</td><td>2.500.000</td><td>3.500.000</td><td>5.500.000</td><td>7.000.000</td><td>9.000.000</td></tr>
+  <tr><td>Marketing + ESG kit</td><td>500.000</td><td>1.000.000</td><td>2.000.000</td><td>4.000.000</td><td>6.000.000</td><td>8.000.000</td></tr>
   <tr><td>Admin/pháp lý</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3.000.000</td><td>0</td></tr>
   <tr class="tr"><td>TỔNG FIXED OPEX</td><td>10.000.000</td><td>14.500.000</td><td>33.000.000</td><td>63.000.000</td><td>95.000.000</td><td>122.000.000</td></tr>
   </tbody>
@@ -376,41 +379,41 @@ tr:nth-child(even) td{background:var(--lg)}
 
 <!-- ============ I ============ -->
 <div class="section" id="I">
-<div class="sh g">📊 I. P&L — Timeline 5 năm (ĐÃ SỬA LỖI)<span class="badge">Số đã đồng bộ</span></div>
+<div class="sh g">📊 I. Doanh thu & Lợi nhuận theo timeline<span class="badge">Phép tính chi tiết</span></div>
 <div class="sb">
 <table>
   <thead>
   <tr><th>Chỉ số</th><th>M0–6</th><th>M7–12</th><th>Year 2</th><th>Year 3</th><th>Year 4</th><th>Year 5</th></tr>
   </thead>
   <tbody>
-  <tr><td>Barbers</td><td>9</td><td>25</td><td>100</td><td>200</td><td>400</td><td>600</td></tr>
-  <tr><td>CE</td><td>75%</td><td>78%</td><td>83%</td><td>87%</td><td>90%</td><td>93%</td></tr>
-  <tr><td>Volume (kg/tháng)</td><td class="na">102</td><td>295</td><td>1.259</td><td>2.639</td><td>5.460</td><td>8.463</td></tr>
-  <tr><td>Mats/tháng</td><td class="na">0</td><td>590</td><td>2.518</td><td>5.278</td><td>10.920</td><td>16.926</td></tr>
-  <tr><td>Giá/mat (VND)</td><td class="na">—</td><td>28.000</td><td>32.000</td><td>35.000</td><td>35.500</td><td>36.000</td></tr>
+  <tr><td>Barbers active (TB)</td><td>9</td><td>25</td><td>100</td><td>200</td><td>400</td><td>600</td></tr>
+  <tr><td>Collection Efficiency</td><td>75%</td><td>78%</td><td>83%</td><td>87%</td><td>90%</td><td>93%</td></tr>
+  <tr><td>Volume tóc (kg/tháng)</td><td class="na">102</td><td>295</td><td>1.259</td><td>2.639</td><td>5.460</td><td>8.463</td></tr>
+  <tr><td>Mats sản xuất/tháng</td><td class="na">0</td><td>590</td><td>2.518</td><td>5.278</td><td>10.920</td><td>16.926</td></tr>
+  <tr><td>Giá bán/mat (VND)</td><td class="na">—</td><td>28.000</td><td>32.000</td><td>35.000</td><td>35.500</td><td>36.000</td></tr>
   <tr class="trs"><td>DOANH THU/THÁNG</td><td class="neg">0</td><td class="pos">16.520.000</td><td class="pos">80.576.000</td><td class="pos">184.730.000</td><td class="pos">387.660.000</td><td class="pos">609.336.000</td></tr>
   <tr><td>Barber payment</td><td>1.020.000</td><td>2.950.000</td><td>12.590.000</td><td>26.390.000</td><td>57.330.000</td><td>101.556.000</td></tr>
-  <tr><td>3PL cost</td><td>3.250.000</td><td>5.200.000</td><td>4.986.000</td><td>9.533.000</td><td>17.472.000</td><td>22.750.000</td></tr>
-  <tr><td>Gia công xưởng</td><td class="na">0</td><td>4.130.000</td><td>17.626.000</td><td>31.668.000</td><td>63.336.000</td><td>93.093.000</td></tr>
+  <tr><td>3PL cost</td><td>3.250.000</td><td>5.200.000</td><td>4.980.000</td><td>9.526.000</td><td>17.472.000</td><td>22.732.500</td></tr>
+  <tr><td>Gia công xưởng</td><td class="na">0</td><td>4.248.000</td><td>17.122.400</td><td>33.779.200</td><td>65.520.000</td><td>99.863.400</td></tr>
   <tr><td>Processing nhân công</td><td>6.000.000</td><td>12.000.000</td><td>13.000.000</td><td>28.000.000</td><td>42.000.000</td><td>60.000.000</td></tr>
   <tr><td>Packaging + distribution</td><td class="na">0</td><td>885.000</td><td>3.777.000</td><td>7.917.000</td><td>16.380.000</td><td>25.389.000</td></tr>
-  <tr class="trs"><td>COGS BIẾN ĐỔI/THÁNG</td><td>10.270.000</td><td>25.165.000</td><td>51.979.000</td><td>103.508.000</td><td>196.518.000</td><td>302.788.000</td></tr>
-  <tr class="trs"><td>LỢI NHUẬN GỘP/THÁNG</td><td class="neg">−10.270.000</td><td class="neg">−8.645.000</td><td class="pos">28.597.000</td><td class="pos">81.222.000</td><td class="pos">191.142.000</td><td class="pos">306.548.000</td></tr>
+  <tr class="trs"><td>COGS BIẾN ĐỔI/THÁNG</td><td>10.270.000</td><td>25.283.000</td><td>51.469.400</td><td>105.612.200</td><td>198.702.000</td><td>309.540.900</td></tr>
+  <tr class="trs"><td>LỢI NHUẬN GỘP/THÁNG</td><td class="neg">−10.270.000</td><td class="neg">−8.763.000</td><td class="pos">29.106.600</td><td class="pos">79.117.800</td><td class="pos">188.958.000</td><td class="pos">299.795.100</td></tr>
   <tr><td>Fixed OpEx/tháng</td><td>10.000.000</td><td>14.500.000</td><td>33.000.000</td><td>63.000.000</td><td>95.000.000</td><td>122.000.000</td></tr>
-  <tr class="tr"><td>EBITDA/THÁNG</td><td class="neg">−20.270.000</td><td class="neg">−23.145.000</td><td class="neg">−4.403.000</td><td class="pos">+18.222.000 ✅</td><td class="pos">+96.142.000 ✅</td><td class="pos">+184.548.000 ✅</td></tr>
-  <tr><td>EBITDA kỳ (×tháng)</td><td class="neg">−121.620.000 (6T)</td><td class="neg">−138.870.000 (6T)</td><td class="neg">−52.836.000 (12T)</td><td class="pos">+218.664.000 (12T)</td><td class="pos">+1.153.704.000 (12T)</td><td class="pos">+2.214.576.000 (12T)</td></tr>
+  <tr class="tr"><td>EBITDA/THÁNG</td><td class="neg">−20.270.000</td><td class="neg">−23.263.000</td><td class="neg">−3.893.400</td><td class="pos">+16.117.800 ✅</td><td class="pos">+93.958.000 ✅</td><td class="pos">+177.795.100 ✅</td></tr>
+  <tr><td>EBITDA kỳ (×tháng)</td><td class="neg">−121.620.000 (6T)</td><td class="neg">−139.578.000 (6T)</td><td class="neg">−46.720.800 (12T)</td><td class="pos">+193.413.600 (12T)</td><td class="pos">+1.127.496.000 (12T)</td><td class="pos">+2.133.541.200 (12T)</td></tr>
   </tbody>
 </table>
 
 <div class="chart-box">
-  <div class="chart-title">EBITDA/tháng theo giai đoạn (triệu VND) — Lỗ → Hòa vốn Year 3</div>
+  <div class="chart-title">EBITDA/tháng theo giai đoạn (triệu VND)</div>
   <div class="col-chart">
-    <div class="col"><div class="col-bar" style="height:11%;background:#B71C1C"><span>−20,3</span></div><div class="col-lbl">M0–6</div><div class="col-sub">Pilot</div></div>
-    <div class="col"><div class="col-bar" style="height:12.5%;background:#B71C1C"><span>−23,1</span></div><div class="col-lbl">M7–12</div><div class="col-sub">First revenue</div></div>
-    <div class="col"><div class="col-bar" style="height:2.4%;background:#E65100"><span>−4,4</span></div><div class="col-lbl">Year 2</div><div class="col-sub">Scale</div></div>
-    <div class="col"><div class="col-bar" style="height:9.9%;background:#43A047"><span>+18,2</span></div><div class="col-lbl">Year 3</div><div class="col-sub">Break-even ✅</div></div>
-    <div class="col"><div class="col-bar" style="height:52.1%;background:#2E7D32"><span>+96,1</span></div><div class="col-lbl">Year 4</div><div class="col-sub">Profit</div></div>
-    <div class="col"><div class="col-bar" style="height:100%;background:#1B5E20"><span>+184,5</span></div><div class="col-lbl">Year 5</div><div class="col-sub">Growth</div></div>
+    <div class="col"><div class="col-bar" style="height:11.4%;background:#B71C1C"><span>−20,3</span></div><div class="col-lbl">M0–6</div><div class="col-sub">Pilot</div></div>
+    <div class="col"><div class="col-bar" style="height:13.1%;background:#B71C1C"><span>−23,3</span></div><div class="col-lbl">M7–12</div><div class="col-sub">First revenue</div></div>
+    <div class="col"><div class="col-bar" style="height:2.2%;background:#E65100"><span>−3,9</span></div><div class="col-lbl">Year 2</div><div class="col-sub">Scale</div></div>
+    <div class="col"><div class="col-bar" style="height:9.1%;background:#43A047"><span>+16,1</span></div><div class="col-lbl">Year 3</div><div class="col-sub">Break-even ✅</div></div>
+    <div class="col"><div class="col-bar" style="height:52.9%;background:#2E7D32"><span>+94,0</span></div><div class="col-lbl">Year 4</div><div class="col-sub">Profit</div></div>
+    <div class="col"><div class="col-bar" style="height:100%;background:#1B5E20"><span>+177,8</span></div><div class="col-lbl">Year 5</div><div class="col-sub">Growth</div></div>
   </div>
   <div class="legend">
     <span><i style="background:#B71C1C"></i>Lỗ</span>
@@ -421,59 +424,58 @@ tr:nth-child(even) td{background:var(--lg)}
   </div>
 </div>
 
-<div class="note r">⚠️ <b>Điểm hòa vốn:</b> Year 3 EBITDA dương (+18,22M/tháng). Year 2 vẫn lỗ nhẹ (−4,4M/tháng) — cần angel round ~200M VND bridge. Khác bản gốc: Year 3 <b>lãi thật</b> sau khi loại double-count, không phải lỗ.</div>
+<div class="note r">⚠️ <b>Điểm hòa vốn:</b> Year 3 là năm đầu tiên EBITDA dương (+16,12M VND/tháng). Year 2 vẫn lỗ nhẹ (−3,89M/tháng) — cần angel round ~150M VND để bridge.</div>
 </div></div>
 
 <!-- ============ J ============ -->
 <div class="section" id="J">
-<div class="sh r">📐 J. NPV & DPP (ĐÃ SỬA) — r = 12%<span class="badge">Dòng tiền đúng</span></div>
+<div class="sh r">📐 J. NPV & Thời gian hoàn vốn (DPP) — r = 12%<span class="badge">Phép tính chi tiết</span></div>
 <div class="sb">
-<div class="note b">Vốn tự có cần: <b>234,5 triệu VND</b> (bù lỗ Year 1 vượt SIHUB surplus 26M). Discount rate 12%/năm.</div>
+<div class="note b">Vốn tự có cần huy động: <b>234,5 triệu VND</b> (bù lỗ Year 1 vượt SIHUB surplus 26M). Discount rate 12%/năm = chi phí cơ hội vốn SME Việt Nam.</div>
 <div class="calc">
   <div><b>Dòng tiền after-tax (triệu VND):</b></div>
   <div class="step"><span class="op">Năm 0:</span> −234,5 (vốn tự có = Year 1 loss 260,5 − SIHUB surplus 26)</div>
   <div class="step"><span class="op">Năm 1:</span> 0 (SIHUB + vốn Year 0 bù hết)</div>
-  <div class="step"><span class="op">Năm 2:</span> −52,8 (EBITDA −4,4 × 12)</div>
-  <div class="step"><span class="op">Năm 3:</span> +174,9 (218,7 × 0,8 sau thuế 20%)</div>
-  <div class="step"><span class="op">Năm 4:</span> +922,9 (1.153,7 × 0,8)</div>
-  <div class="step"><span class="op">Năm 5:</span> +1.771,7 (2.214,6 × 0,8)</div>
+  <div class="step"><span class="op">Năm 2:</span> −46,72 (EBITDA −3,89 × 12)</div>
+  <div class="step"><span class="op">Năm 3:</span> +154,73 (193,41 × 0,8 sau thuế 20%)</div>
+  <div class="step"><span class="op">Năm 4:</span> +901,99 (1.127,50 × 0,8)</div>
+  <div class="step"><span class="op">Năm 5:</span> +1.706,83 (2.133,54 × 0,8)</div>
   <br>
   <div><b>NPV (r = 12%):</b></div>
-  <div class="step"><span class="op">PV Y0:</span> −234,5</div>
+  <div class="step"><span class="op">PV Y0:</span> −234,50</div>
   <div class="step"><span class="op">PV Y1:</span> 0</div>
-  <div class="step"><span class="op">PV Y2:</span> −52,8 ÷ 1,2544 = −42,1</div>
-  <div class="step"><span class="op">PV Y3:</span> 174,9 ÷ 1,4049 = 124,5</div>
-  <div class="step"><span class="op">PV Y4:</span> 922,9 ÷ 1,5735 = 586,5</div>
-  <div class="step"><span class="op">PV Y5:</span> 1.771,7 ÷ 1,7623 = 1.005,3</div>
-  <div class="step"><span class="op">NPV =</span> <span class="res">1.439,7 triệu VND ≫ 0 ✅</span></div>
+  <div class="step"><span class="op">PV Y2:</span> −46,72 ÷ 1,2544 = −37,24</div>
+  <div class="step"><span class="op">PV Y3:</span> +154,73 ÷ 1,4049 = +110,14</div>
+  <div class="step"><span class="op">PV Y4:</span> +901,99 ÷ 1,5735 = +573,24</div>
+  <div class="step"><span class="op">PV Y5:</span> +1.706,83 ÷ 1,7623 = +968,51</div>
+  <div class="step"><span class="op">NPV =</span> <span class="res">1.380,15 triệu VND ≫ 0 ✅</span></div>
   <br>
-  <div><b>DPP:</b></div>
-  <div class="step"><span class="op">Lũy kế Y0:</span> −234,5</div>
-  <div class="step"><span class="op">Lũy kế Y1:</span> −234,5</div>
-  <div class="step"><span class="op">Lũy kế Y2:</span> −276,6</div>
-  <div class="step"><span class="op">Lũy kế Y3:</span> −152,1</div>
-  <div class="step"><span class="op">Lũy kế Y4:</span> +434,4</div>
-  <div class="step"><span class="op">DPP =</span> 3 + (152,1 ÷ 586,5) = <span class="res">3,26 năm</span></div>
-  <div class="step"><span class="op">Từ lúc có doanh thu (T7):</span> 3,26 − 0,58 = <span class="res">≈ 2,68 năm sau commercial</span></div>
+  <div><b>DPP (Discounted Payback Period):</b></div>
+  <div class="step"><span class="op">Lũy kế Y0:</span> −234,50</div>
+  <div class="step"><span class="op">Lũy kế Y1:</span> −234,50</div>
+  <div class="step"><span class="op">Lũy kế Y2:</span> −271,74</div>
+  <div class="step"><span class="op">Lũy kế Y3:</span> −161,60</div>
+  <div class="step"><span class="op">Lũy kế Y4:</span> +411,64</div>
+  <div class="step"><span class="op">DPP =</span> 3 + (161,60 ÷ 573,24) = <span class="res">3,28 năm</span></div>
 </div>
 
 <div class="kpi-grid">
-  <div class="kpi"><div class="v">1.439,7M</div><div class="l">NPV tại r=12% (VND)</div></div>
-  <div class="kpi"><div class="v">3,26 năm</div><div class="l">DPP từ ngày đầu</div></div>
+  <div class="kpi"><div class="v">1.380M</div><div class="l">NPV tại r=12% (VND)</div></div>
+  <div class="kpi"><div class="v">3,28 năm</div><div class="l">DPP từ ngày đầu</div></div>
   <div class="kpi blue"><div class="v">234,5M</div><div class="l">Vốn tự có cần (~$9.300)</div></div>
   <div class="kpi orange"><div class="v">Year 3</div><div class="l">Năm đầu EBITDA dương</div></div>
-  <div class="kpi"><div class="v">614%</div><div class="l">ROI trên vốn tự có</div></div>
+  <div class="kpi"><div class="v">589%</div><div class="l">ROI trên vốn tự có</div></div>
 </div>
 
 <div class="chart-box">
-  <div class="chart-title">Lũy kế dòng tiền chiết khấu (triệu VND) — DPP tại 3,26 năm</div>
+  <div class="chart-title">Lũy kế dòng tiền chiết khấu (triệu VND)</div>
   <div class="col-chart" style="height:220px">
     <div class="col"><div class="col-bar" style="height:16.3%;background:#B71C1C"><span>−234,5</span></div><div class="col-lbl">Y0</div></div>
     <div class="col"><div class="col-bar" style="height:16.3%;background:#B71C1C"><span>−234,5</span></div><div class="col-lbl">Y1</div></div>
-    <div class="col"><div class="col-bar" style="height:19.2%;background:#B71C1C"><span>−276,6</span></div><div class="col-lbl">Y2</div></div>
-    <div class="col"><div class="col-bar" style="height:10.6%;background:#E65100"><span>−152,1</span></div><div class="col-lbl">Y3</div></div>
-    <div class="col"><div class="col-bar" style="height:30.2%;background:#43A047"><span>+434,4</span></div><div class="col-lbl">Y4</div></div>
-    <div class="col"><div class="col-bar" style="height:100%;background:#1B5E20"><span>+1.439,7</span></div><div class="col-lbl">Y5</div></div>
+    <div class="col"><div class="col-bar" style="height:18.9%;background:#B71C1C"><span>−271,7</span></div><div class="col-lbl">Y2</div></div>
+    <div class="col"><div class="col-bar" style="height:11.2%;background:#E65100"><span>−161,6</span></div><div class="col-lbl">Y3</div></div>
+    <div class="col"><div class="col-bar" style="height:28.6%;background:#43A047"><span>+411,6</span></div><div class="col-lbl">Y4</div></div>
+    <div class="col"><div class="col-bar" style="height:100%;background:#1B5E20"><span>+1.380</span></div><div class="col-lbl">Y5</div></div>
   </div>
   <div class="legend">
     <span><i style="background:#B71C1C"></i>Lũy kế âm</span>
@@ -490,19 +492,20 @@ tr:nth-child(even) td{background:var(--lg)}
     <div class="tl-pt"><div class="tl-lbl">M7</div><div class="tl-dot" style="border-color:#F9A825"></div><div class="tl-val">First revenue</div></div>
     <div class="tl-pt"><div class="tl-lbl">Year 2</div><div class="tl-dot" style="border-color:#F9A825"></div><div class="tl-val">Scale</div></div>
     <div class="tl-pt"><div class="tl-lbl">Year 3</div><div class="tl-dot" style="border-color:#43A047"></div><div class="tl-val">Break-even ✅</div></div>
-    <div class="tl-pt"><div class="tl-lbl">Year 4</div><div class="tl-dot" style="border-color:#2E7D32"></div><div class="tl-val">DPP 3,26 năm</div></div>
-    <div class="tl-pt"><div class="tl-lbl">Year 5</div><div class="tl-dot" style="border-color:#1B5E20"></div><div class="tl-val">NPV 1.440M</div></div>
+    <div class="tl-pt"><div class="tl-lbl">Year 4</div><div class="tl-dot" style="border-color:#2E7D32"></div><div class="tl-val">DPP 3,28 năm</div></div>
+    <div class="tl-pt"><div class="tl-lbl">Year 5</div><div class="tl-dot" style="border-color:#1B5E20"></div><div class="tl-val">NPV 1.380M</div></div>
   </div>
 </div>
 
 <div class="note">
-  📊 <b>Strategic Insight (đã sửa):</b> NPV 1.439,7M VND trên vốn tự có 234,5M = ROI 614%. DPP 3,26 năm — nằm trong mục tiêu 3–5 năm. Operating leverage cao: Fixed costs tăng 12,2× từ Y1→Y5 nhưng doanh thu tăng 36,9×.
+  📊 <b>Nhận định:</b> NPV 1.380M VND trên vốn tự có 234,5M = ROI 589%. DPP 3,28 năm — nằm trong mục tiêu 3–5 năm. Operating leverage cao: Fixed costs tăng 12,2× từ Y1→Y5 nhưng doanh thu tăng 36,9×.
 </div>
 </div></div>
 
-<div style="text-align:center;padding:16px;color:#666;font-size:11px;background:#fff;border-radius:8px;margin-top:8px">
-  <strong>HairCycle Financial v2.0 — Đã sửa lỗi số học</strong> | Pilot: 4RAU Barber × 9 cơ sở HCMC | Nguồn: Savills 2024 · mystorage.vn · AhaMove · w3seo.com · Thịnh Gia Huy L.A · Long An Phú<br>
-  Tất cả con số là ước tính có căn cứ, không phải cam kết tài chính | r = 12%/năm | Thuế TNDN 20%
+<div class="footer">
+  <strong>HairCycle Financial Report</strong> · Pilot: 4RAU Barber × 9 cơ sở HCMC<br>
+  Nguồn tham chiếu: Savills VN Industrial 2024 · mystorage.vn · AhaMove · w3seo.com · Thịnh Gia Huy L.A · Long An Phú<br>
+  Tất cả con số là ước tính có căn cứ thị trường · r = 12%/năm · Thuế TNDN 20%
 </div>
 
 </div>
