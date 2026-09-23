@@ -32,6 +32,8 @@ tr:nth-child(even) td{background:var(--lg)}
 .neg{color:var(--r);font-weight:700}.pos{color:var(--g);font-weight:700}.na{color:#9E9E9E}
 .form{border:1.5px solid var(--g);border-radius:8px;padding:12px 16px;background:var(--lg);margin:8px 0;font-size:13px;line-height:2.1}
 .form .res{display:inline-block;background:var(--g);color:#fff;padding:2px 12px;border-radius:12px;font-weight:800;font-size:13.5px}
+.form.blue{border-color:var(--b);background:var(--lb)}
+.form.blue .res{background:var(--b)}
 .toc{background:#fff;border-radius:10px;padding:14px 18px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .toc h3{color:var(--g);font-size:14px;margin-bottom:8px}
 .toc a{color:var(--b);text-decoration:none;font-size:12.5px;display:inline-block;padding:2px 10px 2px 0}
@@ -93,7 +95,10 @@ tr:nth-child(even) td{background:var(--lg)}
   <h3>📋 Mục lục</h3>
   <a href="#flow">Sơ đồ tổng thể</a>
   <a href="#P1">① Chiến lược ngắn hạn</a>
-  <a href="#P2">② Chiến lược dài hạn</a>
+  <a href="#BUY">② Cách tính giá MUA tóc</a>
+  <a href="#SELL">③ Cách tính giá BÁN tóc</a>
+  <a href="#P2">④ Chiến lược dài hạn</a>
+  <a href="#MAT">⑤ Cách tính giá bán thảm</a>
   <a href="#SS">So sánh 2 giai đoạn</a>
   <a href="#PL">Lộ trình P&L</a>
   <a href="#PILOT">Kế hoạch pilot</a>
@@ -131,27 +136,16 @@ tr:nth-child(even) td{background:var(--lg)}
   </div>
 </div>
 
-<div class="note b"><b>Tại sao chia 2 giai đoạn?</b> Giai đoạn 1 vận hành đơn giản, đầu tư thấp, học hỏi quy trình thu gom. Khi đã có volume ổn định và dòng tiền, mới mở rộng sang sản xuất để biên lợi nhuận cao hơn.</div>
+<div class="note b"><b>Tại sao chia 2 giai đoạn?</b> Giai đoạn 1 vận hành đơn giản, đầu tư thấp, học hỏi quy trình. Khi đã có volume ổn định và dòng tiền, mới mở rộng sang sản xuất để biên lợi nhuận cao hơn.</div>
 </div></div>
 
 <!-- ============ PHASE 1 ============ -->
 <div class="section" id="P1">
-<div class="sh b">🔵 ① Chiến lược Ngắn hạn — Thu gom & Bán tóc<span class="badge">Tháng 0–18</span></div>
+<div class="sh b">🔵 ① Chiến lược Ngắn hạn — Tổng quan<span class="badge">Tháng 0–18</span></div>
 <div class="sb">
-<div class="note b"><b>Mô hình:</b> Thu gom tóc vụn từ 4RAU Barbers, làm sạch cơ bản, bán cho đầu mối thu mua để họ sản xuất thảm hoặc xuất khẩu. Không đầu tư xưởng, không mua máy dệt.</div>
+<div class="note b"><b>Mô hình:</b> Thu gom tóc vụn từ 4RAU Barbers, làm sạch cơ bản, bán cho đầu mối thu mua. Không đầu tư xưởng, không mua máy dệt.</div>
 
-<h3 style="color:var(--b);font-size:13px;margin:12px 0 8px">💵 Giá mua & bán</h3>
-<table>
-  <thead><tr><th>Hạng mục</th><th>Giá (VND/kg)</th><th>Căn cứ</th></tr></thead>
-  <tbody>
-  <tr><td>Mua tóc từ barber</td><td>8.000–10.000</td><td>Barber hiện nhận 0đ — đây là thêm thu nhập</td></tr>
-  <tr><td>Bán tóc thô (chưa xử lý)</td><td>18.000–22.000</td><td>Bán cho đầu mối sản xuất</td></tr>
-  <tr><td>Bán tóc sạch (sort + wash)</td><td>28.000–32.000</td><td>Đã phân loại + làm sạch cơ bản</td></tr>
-  <tr><td>Chênh lệch (gross)</td><td>~20.000</td><td>Biên gộp ~55% (sau chi phí vận hành ~20%)</td></tr>
-  </tbody>
-</table>
-
-<h3 style="color:var(--b);font-size:13px;margin:16px 0 8px">💰 CapEx ngắn hạn — Tối giản</h3>
+<h3 style="color:var(--b);font-size:13px;margin:12px 0 8px">💰 CapEx ngắn hạn — Tối giản</h3>
 <table>
   <thead><tr><th>Hạng mục</th><th>Chi phí</th><th>Ghi chú</th></tr></thead>
   <tbody>
@@ -181,78 +175,175 @@ tr:nth-child(even) td{background:var(--lg)}
   <tr class="tr"><td>TỔNG FIXED OPEX</td><td>3.000.000</td><td>4.600.000</td><td>6.300.000</td></tr>
   </tbody>
 </table>
+</div></div>
 
-<h3 style="color:var(--b);font-size:13px;margin:16px 0 8px">👥 Chi phí biến đổi hàng tháng</h3>
-<table>
-  <thead><tr><th>Khoản mục</th><th>Tháng 1–6</th><th>Tháng 7–12</th><th>Tháng 13–18</th></tr></thead>
-  <tbody>
-  <tr><td>Barbers</td><td>9</td><td>30</td><td>80</td></tr>
-  <tr><td>Volume (kg/tháng)</td><td>102</td><td>352</td><td>970</td></tr>
-  <tr><td>Chi mua tóc (9.000/kg)</td><td>918.000</td><td>3.168.000</td><td>8.730.000</td></tr>
-  <tr><td>3PL (200.000/tuyến)</td><td>1.600.000</td><td>3.200.000</td><td>5.600.000</td></tr>
-  <tr><td>Nhân công hub (part-time)</td><td>4.000.000</td><td>6.000.000</td><td>8.000.000</td></tr>
-  <tr><td>Nước + detergent + điện sấy</td><td>500.000</td><td>1.500.000</td><td>4.000.000</td></tr>
-  <tr><td>Bao bì + nhãn</td><td>300.000</td><td>1.000.000</td><td>2.900.000</td></tr>
-  <tr class="trs"><td>TỔNG BIẾN ĐỔI</td><td>7.318.000</td><td>14.868.000</td><td>29.230.000</td></tr>
-  </tbody>
-</table>
+<!-- ============ BUY PRICE ============ -->
+<div class="section" id="BUY">
+<div class="sh o">💵 ② Cách tính giá MUA tóc từ barber<span class="badge">Logic tính ngược</span></div>
+<div class="sb">
+<div class="note o"><b>Câu hỏi:</b> Tóc vụn hiện có giá thị trường = 0 VND/kg (barber còn phải trả tiền đổ rác). Vậy tại sao HairCycle trả 8.000–12.000 VND/kg? Con số này từ đâu ra?</div>
 
-<h3 style="color:var(--b);font-size:13px;margin:16px 0 8px">📊 P&L ngắn hạn</h3>
-<table>
-  <thead><tr><th>Chỉ số</th><th>Tháng 1–6</th><th>Tháng 7–12</th><th>Tháng 13–18</th></tr></thead>
-  <tbody>
-  <tr><td>Volume (kg)</td><td>102</td><td>352</td><td>970</td></tr>
-  <tr><td>Giá bán tóc sạch (VND/kg)</td><td>25.000</td><td>28.000</td><td>30.000</td></tr>
-  <tr class="trs"><td>DOANH THU/THÁNG</td><td class="pos">2.550.000</td><td class="pos">9.856.000</td><td class="pos">29.100.000</td></tr>
-  <tr><td>Biến đổi</td><td>7.318.000</td><td>14.868.000</td><td>29.230.000</td></tr>
-  <tr class="trs"><td>LỢI NHUẬN GỘP</td><td class="neg">−4.768.000</td><td class="neg">−5.012.000</td><td class="neg">−130.000</td></tr>
-  <tr><td>Fixed OpEx</td><td>3.000.000</td><td>4.600.000</td><td>6.300.000</td></tr>
-  <tr class="tr"><td>EBITDA/THÁNG</td><td class="neg">−7.768.000</td><td class="neg">−9.612.000</td><td class="neg">−6.430.000</td></tr>
-  <tr><td>EBITDA kỳ (×6)</td><td class="neg">−46.608.000</td><td class="neg">−57.672.000</td><td class="neg">−38.580.000</td></tr>
-  </tbody>
-</table>
-
-<div class="note r">⚠️ <b>Giai đoạn ngắn hạn chấp nhận lỗ</b> — đây là giai đoạn học hỏi và xây dựng mạng lưới. Tổng lỗ 18 tháng ≈ <b>143 triệu VND</b>. Cần vốn ban đầu ~150 triệu (bao gồm CapEx 41,5M + lỗ lũy kế bù).</div>
-
-<div class="chart-box">
-  <div class="chart-title">EBITDA/tháng giai đoạn ngắn hạn (triệu VND)</div>
-  <div class="col-chart">
-    <div class="col"><div class="col-bar" style="height:80.8%;background:#B71C1C"><span>−7,8</span></div><div class="col-lbl">T1–6</div><div class="col-sub">Pilot</div></div>
-    <div class="col"><div class="col-bar" style="height:100%;background:#B71C1C"><span>−9,6</span></div><div class="col-lbl">T7–12</div><div class="col-sub">Mở rộng</div></div>
-    <div class="col"><div class="col-bar" style="height:66.9%;background:#E65100"><span>−6,4</span></div><div class="col-lbl">T13–18</div><div class="col-sub">Tiệm cận</div></div>
-  </div>
+<h3 style="color:var(--o);font-size:13px;margin:12px 0 8px">🎯 Nguyên tắc: "Tính ngược từ giá bán"</h3>
+<div class="form blue">
+  <b>Công thức tổng quát:</b><br><br>
+  <b>Giá mua tối đa</b> = Giá bán − (3PL + Làm sạch + Bao bì) − Margin target<br><br>
+  Trong đó:<br>
+  • <b>Giá bán</b>: giá bán tóc sạch cho đầu mối<br>
+  • <b>3PL + Làm sạch + Bao bì</b>: chi phí biến đổi để đưa tóc từ barber → đầu mối<br>
+  • <b>Margin target</b>: lợi nhuận giữ lại của HairCycle
 </div>
 
-<h3 style="color:var(--b);font-size:13px;margin:16px 0 8px">✅ Điều kiện chuyển sang giai đoạn 2</h3>
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">📐 Ví dụ tính Year 2 (giai đoạn 2 — volume 1.259 kg/tháng)</h3>
+<div class="calc">
+  <div class="step"><span class="op">Bước 1:</span> Giá bán tóc sạch cho đầu mối = <b>40.000 VND/kg</b></div>
+  <div class="step"><span class="op">Bước 2:</span> Chi phí biến đổi/kg:</div>
+  <div class="step"><span class="op">  • 3PL:</span> 3.955 VND/kg (đã tính ở mục B)</div>
+  <div class="step"><span class="op">  • Nhân công hub:</span> 10.325 VND/kg (đã tính ở mục E)</div>
+  <div class="step"><span class="op">  • Nước + detergent:</span> 600 VND/kg</div>
+  <div class="step"><span class="op">  • Điện sấy:</span> 420 VND/kg</div>
+  <div class="step"><span class="op">  • Bao bì + nhãn:</span> 1.500 VND/kg</div>
+  <div class="step"><span class="op">  → Tổng biến đổi:</span> <b>16.800 VND/kg</b></div>
+  <div class="step"><span class="op">Bước 3:</span> Margin buffer 50% = 40.000 × 50% = <b>20.000 VND/kg</b></div>
+  <div class="step"><span class="op">Bước 4:</span> Giá mua tối đa = 40.000 − 16.800 − 20.000 = <b>3.200 VND/kg</b></div>
+  <div class="step"><span class="op">⚠️ Vấn đề:</span> Chỉ trả được 3.200 — <b>quá thấp</b> để hấp dẫn barber!</div>
+</div>
+
+<div class="note r"><b>→ Điều chỉnh:</b> Giảm margin buffer xuống <b>30%</b> để có thể trả barber cao hơn, vì giai đoạn đầu cần thuyết phục nhiều tiệm tham gia.</div>
+
+<div class="calc">
+  <div class="step"><span class="op">Margin 30%:</span> 40.000 × 30% = 12.000 VND/kg</div>
+  <div class="step"><span class="op">Giá mua:</span> 40.000 − 16.800 − 12.000 = <b>11.200 VND/kg</b></div>
+  <div class="step"><span class="op">→ Chốt:</span> <span class="res">10.000 VND/kg</span> (làm tròn xuống, margin thực 33%)</div>
+</div>
+
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">📊 Bảng giá mua theo giai đoạn</h3>
+<table>
+  <thead><tr><th>Giai đoạn</th><th>Giá bán/kg</th><th>Biến đổi/kg</th><th>Margin</th><th>Giá mua barber</th></tr></thead>
+  <tbody>
+  <tr><td>T1–6 (pilot)</td><td>25.000</td><td>42.180</td><td>âm</td><td>8.000</td></tr>
+  <tr><td>T7–12</td><td>28.000</td><td>30.700</td><td>âm nhẹ</td><td>9.000</td></tr>
+  <tr><td>T13–18</td><td>30.000</td><td>21.900</td><td>27%</td><td>10.000</td></tr>
+  <tr><td>Year 2</td><td>40.000</td><td>16.800</td><td>33%</td><td>10.000</td></tr>
+  <tr><td>Year 3</td><td>48.000</td><td>16.500</td><td>36%</td><td>10.000</td></tr>
+  <tr><td>Year 4</td><td>52.000</td><td>15.800</td><td>37%</td><td>10.500</td></tr>
+  <tr><td>Year 5</td><td>58.000</td><td>15.400</td><td>38%</td><td>12.000</td></tr>
+  </tbody>
+</table>
+
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">✅ Kiểm tra tính hấp dẫn với barber</h3>
+<div class="calc">
+  <div class="step"><span class="op">1 tiệm:</span> 3,5 kg/tuần × 75% CE = 2,625 kg/tuần</div>
+  <div class="step"><span class="op">Doanh thu:</span> 2,625 kg × 10.000 = 26.250 VND/tuần</div>
+  <div class="step"><span class="op">→ Tháng:</span> 26.250 × 4,33 = <b>113.663 VND/tháng</b></div>
+  <div class="step"><span class="op">+ Tiết kiệm phí đổ rác:</span> ~15.000 VND/tháng</div>
+  <div class="step"><span class="op">Tổng:</span> <span class="res">~128.663 VND/tháng + ESG badge</span></div>
+  <div class="step"><span class="op">So sánh:</span> Hiện tại barber nhận <b>0 VND</b> → tăng thu nhập từ 0 lên ~130K</div>
+</div>
+
+<div class="chart-box">
+  <div class="chart-title">Logic tính giá mua — Trực quan</div>
+  <div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">Giá bán</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1565C0">40.000</div></div><span class="bar-value">40.000 (Y2)</span></div>
+    <div class="bar-row"><span class="bar-label">− Biến đổi</span><div class="bar-track"><div class="bar-fill" style="width:42%;background:#E65100">16.800</div></div><span class="bar-value">16.800</span></div>
+    <div class="bar-row"><span class="bar-label">− Margin 33%</span><div class="bar-track"><div class="bar-fill" style="width:33%;background:#F9A825">13.200</div></div><span class="bar-value">13.200</span></div>
+    <div class="bar-row"><span class="bar-label">= Mua barber</span><div class="bar-track"><div class="bar-fill" style="width:25%;background:#43A047">10.000</div></div><span class="bar-value">10.000</span></div>
+  </div>
+</div>
+</div></div>
+
+<!-- ============ SELL PRICE ============ -->
+<div class="section" id="SELL">
+<div class="sh g">💸 ③ Cách tính giá BÁN tóc cho đầu mối<span class="badge">Benchmark thị trường</span></div>
+<div class="sb">
+<div class="note"><b>Câu hỏi:</b> Tóc sạch bán 25.000–58.000 VND/kg. Con số này từ đâu ra? Có ai mua không?</div>
+
+<h3 style="color:var(--g);font-size:13px;margin:12px 0 8px">🌍 3 phương pháp xác định giá bán</h3>
+
 <div class="form">
-  Chỉ chuyển sang giai đoạn 2 khi <b>đáp ứng đủ 3 điều kiện:</b><br><br>
-  1. Volume ổn định ≥ <b>1.200 kg/tháng</b> trong 3 tháng liên tục<br>
-  2. EBITDA/tháng ≥ <b>+5 triệu VND</b> (tự nuôi được)<br>
-  3. Có ít nhất <b>3 đầu mối thu mua</b> cam kết mua dài hạn<br>
-  <br>
-  → Nếu chưa đủ, tiếp tục mở rộng barber network trong giai đoạn 1.
+  <b>Phương pháp 1: Benchmark giá thị trường quốc tế</b><br><br>
+  Tóc người (human hair) là mặt hàng giao dịch toàn cầu. Giá tham chiếu từ Alibaba, Capilli Trading Philippines, Canton Fair:<br><br>
+  • Tóc dài 20cm+ (chưa xử lý): <b>$20–50/kg</b> (500.000–1.250.000 VND)<br>
+  • Tóc trung 10–20cm: <b>$5–15/kg</b> (125.000–375.000 VND)<br>
+  • Tóc ngắn hỗn hợp (barber, 2–8cm): <b>$1,2–2,5/kg</b> (30.000–62.500 VND)<br><br>
+  → HairCycle bán tóc barber ngắn → khung giá tham chiếu là <b>$1,2–2,5/kg</b>
+</div>
+
+<div class="form">
+  <b>Phương pháp 2: Cost-plus (tính từ chi phí lên)</b><br><br>
+  Chi phí biến đổi để đưa 1 kg tóc từ barber → đầu mối (Year 2):<br><br>
+  • Mua barber: 10.000<br>
+  • 3PL: 3.955<br>
+  • Nhân công hub: 10.325<br>
+  • Nước + detergent + điện sấy: 1.020<br>
+  • Bao bì + nhãn: 1.500<br>
+  → Tổng chi phí: <b>26.800 VND/kg</b><br><br>
+  Target margin 33%: 26.800 ÷ 0,67 = <b>40.000 VND/kg</b>
+</div>
+
+<div class="form">
+  <b>Phương pháp 3: Giá đối thủ (đầu mối thu mua hiện tại)</b><br><br>
+  • Đầu mối thu mua ở chợ đầu mối TPHCM: 18.000–22.000/kg (tóc chưa xử lý)<br>
+  • Đầu mối có xử lý sơ bộ (sort + wash): 26.000–32.000/kg<br>
+  • Xuất khẩu trực tiếp (đã đóng kiện): 35.000–45.000/kg<br><br>
+  → HairCycle định vị ở khúc giữa — có xử lý sơ bộ, giá cạnh tranh
+</div>
+
+<h3 style="color:var(--g);font-size:13px;margin:16px 0 8px">📈 Giá bán theo giai đoạn & lý do tăng</h3>
+<table>
+  <thead><tr><th>Giai đoạn</th><th>Giá bán/kg</th><th>Sản phẩm</th><th>Lý do</th></tr></thead>
+  <tbody>
+  <tr><td>T1–6 (pilot)</td><td>25.000</td><td>Tóc chưa phân loại</td><td>Bán rẻ để test thị trường, chưa có uy tín</td></tr>
+  <tr><td>T7–12</td><td>28.000</td><td>Tóc sạch cơ bản</td><td>Đã wash, loại bụi</td></tr>
+  <tr><td>T13–18</td><td>30.000</td><td>Tóc sort theo chiều dài</td><td>Phân loại tăng giá trị</td></tr>
+  <tr><td>Year 2</td><td>40.000</td><td>Tóc sạch, đóng kiện 20kg</td><td>Bắt đầu xuất khẩu, có khách ổn định</td></tr>
+  <tr><td>Year 3</td><td>48.000</td><td>Tóc sort kỹ, đạt chuẩn XK</td><td>Chứng nhận chất lượng, uy tín</td></tr>
+  <tr><td>Year 4</td><td>52.000</td><td>Tóc sort + đóng gói chuẩn</td><td>Khách hàng lớn, đơn hàng dài hạn</td></tr>
+  <tr><td>Year 5</td><td>58.000</td><td>Xuất khẩu trực tiếp</td><td>Thương hiệu, quan hệ với buyer nước ngoài</td></tr>
+  </tbody>
+</table>
+
+<h3 style="color:var(--g);font-size:13px;margin:16px 0 8px">🎯 Khách hàng đầu ra</h3>
+<table>
+  <thead><tr><th>Nhóm khách</th><th>Họ mua để làm gì</th><th>Giá họ chấp nhận</th></tr></thead>
+  <tbody>
+  <tr><td>Xưởng tóc giả nội địa</td><td>Làm wig, extension</td><td>35.000–60.000/kg (cần tóc dài)</td></tr>
+  <tr><td>Nhà sản xuất thảm/felt</td><td>Nguyên liệu dệt thảm</td><td>20.000–30.000/kg</td></tr>
+  <tr><td>Đầu mối xuất khẩu</td><td>Gom + bán lại cho nước ngoài</td><td>30.000–40.000/kg</td></tr>
+  <tr><td>Buyer nước ngoài trực tiếp</td><td>Wig, filter, industrial</td><td>40.000–60.000/kg (chuẩn XK)</td></tr>
+  </tbody>
+</table>
+
+<div class="chart-box">
+  <div class="chart-title">Giá bán tóc sạch theo giai đoạn (VND/kg)</div>
+  <div class="bar-chart">
+    <div class="bar-row"><span class="bar-label">T1–6</span><div class="bar-track"><div class="bar-fill" style="width:43.1%;background:#F9A825">25.000</div></div><span class="bar-value">25.000</span></div>
+    <div class="bar-row"><span class="bar-label">T7–12</span><div class="bar-track"><div class="bar-fill" style="width:48.3%;background:#F9A825">28.000</div></div><span class="bar-value">28.000</span></div>
+    <div class="bar-row"><span class="bar-label">T13–18</span><div class="bar-track"><div class="bar-fill" style="width:51.7%;background:#F9A825">30.000</div></div><span class="bar-value">30.000</span></div>
+    <div class="bar-row"><span class="bar-label">Year 2</span><div class="bar-track"><div class="bar-fill" style="width:69%;background:#43A047">40.000</div></div><span class="bar-value">40.000</span></div>
+    <div class="bar-row"><span class="bar-label">Year 3</span><div class="bar-track"><div class="bar-fill" style="width:82.8%;background:#2E7D32">48.000</div></div><span class="bar-value">48.000</span></div>
+    <div class="bar-row"><span class="bar-label">Year 5</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#1B5E20">58.000</div></div><span class="bar-value">58.000</span></div>
+  </div>
+</div>
+<p class="fn">Nguồn: Alibaba Hair Traders · Capilli Trading Philippines · Canton Fair 2024 · Chợ đầu mối TPHCM</p>
+
+<h3 style="color:var(--g);font-size:13px;margin:16px 0 8px">🔍 Kiểm chứng bằng ví dụ cụ thể</h3>
+<div class="calc">
+  <div class="step"><span class="op">Tình huống:</span> HairCycle có 100 kg tóc sạch Year 2, muốn bán cho đầu mối</div>
+  <div class="step"><span class="op">Chi phí bỏ ra:</span> 100 kg × 26.800 = 2.680.000 VND</div>
+  <div class="step"><span class="op">Bán với giá 40.000:</span> 100 × 40.000 = 4.000.000 VND</div>
+  <div class="step"><span class="op">Lợi nhuận gộp:</span> 4.000.000 − 2.680.000 = 1.320.000 VND</div>
+  <div class="step"><span class="op">Biên gộp:</span> 1.320.000 ÷ 4.000.000 = <span class="res">33% ✅</span></div>
+  <div class="step"><span class="op">So sánh thị trường:</span> Giá 40.000 nằm giữa khung $1,2–2,5 (~30K–62K) → <b>cạnh tranh được</b></div>
 </div>
 </div></div>
 
 <!-- ============ PHASE 2 ============ -->
 <div class="section" id="P2">
-<div class="sh g">🟢 ② Chiến lược Dài hạn — Tự sản xuất thảm<span class="badge">Tháng 18–60</span></div>
+<div class="sh g">🟢 ④ Chiến lược Dài hạn — Tự sản xuất thảm<span class="badge">Tháng 18–60</span></div>
 <div class="sb">
-<div class="note"><b>Mô hình:</b> Mở rộng sang sản xuất thảm hoàn chỉnh, bán trực tiếp cho garage, xưởng công nghiệp, xuất khẩu. Biên lợi nhuận cao hơn nhờ bán sản phẩm cuối thay vì nguyên liệu.</div>
+<div class="note"><b>Mô hình:</b> Mở rộng sang sản xuất thảm hoàn chỉnh, bán trực tiếp cho garage, xưởng công nghiệp, xuất khẩu.</div>
 
-<h3 style="color:var(--g);font-size:13px;margin:12px 0 8px">💵 Giá bán thảm — Tiered pricing</h3>
-<table>
-  <thead><tr><th>Loại khách</th><th>Số lượng</th><th>Đơn giá (VND/mat)</th></tr></thead>
-  <tbody>
-  <tr><td>Garage nhỏ / lẻ</td><td>1–5 thảm</td><td>32.000</td></tr>
-  <tr><td>Garage vừa</td><td>6–20 thảm</td><td>29.000</td></tr>
-  <tr><td>Xưởng lớn / B2B</td><td>21–99 thảm</td><td>26.000</td></tr>
-  <tr><td>Hợp đồng năm</td><td>100+ thảm/năm</td><td>24.000</td></tr>
-  <tr class="trs"><td>Giá bình quân gia quyền</td><td></td><td>~29.000</td></tr>
-  </tbody>
-</table>
-
-<h3 style="color:var(--g);font-size:13px;margin:16px 0 8px">💰 CapEx giai đoạn 2 — Đầu tư sản xuất</h3>
+<h3 style="color:var(--g);font-size:13px;margin:12px 0 8px">💰 CapEx giai đoạn 2</h3>
 <table>
   <thead><tr><th>Hạng mục</th><th>Chi phí</th><th>Ghi chú</th></tr></thead>
   <tbody>
@@ -278,11 +369,57 @@ tr:nth-child(even) td{background:var(--lg)}
   </tbody>
 </table>
 
-<div class="note o"><b>Nguồn vốn giai đoạn 2:</b> ~800 triệu CapEx. Có thể huy động qua:<br>
-• Tích lũy từ giai đoạn 1 (nếu lãi)<br>
-• Angel round 300–500 triệu<br>
-• Vay ngân hàng ưu đãi SME (200–300 triệu)<br>
-• Grant mở rộng (nếu có)</div>
+<div class="note o"><b>Nguồn vốn giai đoạn 2:</b> ~800 triệu CapEx. Có thể huy động qua tích lũy từ GĐ1, angel round 300–500 triệu, vay ngân hàng ưu đãi SME, hoặc grant mở rộng.</div>
+</div></div>
+
+<!-- ============ MAT PRICE ============ -->
+<div class="section" id="MAT">
+<div class="sh o">🛒 ⑤ Cách tính giá bán thảm<span class="badge">3 phương pháp</span></div>
+<div class="sb">
+<div class="note o"><b>Câu hỏi:</b> Thảm bán 24.000–32.000 VND/mat. Con số từ đâu? Tại sao garage chịu mua?</div>
+
+<h3 style="color:var(--o);font-size:13px;margin:12px 0 8px">Phương pháp 1: Cost-plus</h3>
+<div class="calc">
+  <div class="step"><span class="op">Tóc mua:</span> 0,5 kg × 10.000 = 5.000</div>
+  <div class="step"><span class="op">3PL:</span> 0,5 kg × 3.955 = 1.978</div>
+  <div class="step"><span class="op">Nhân công hub:</span> 0,5 kg × 10.325 = 5.163</div>
+  <div class="step"><span class="op">Gia công xưởng:</span> 6.800</div>
+  <div class="step"><span class="op">Bao bì + phân phối:</span> 1.500</div>
+  <div class="step"><span class="op">Tổng biến đổi:</span> <b>20.441 VND/mat</b></div>
+  <div class="step"><span class="op">Margin 30%:</span> 20.441 ÷ 0,7 = <span class="res">29.200 ≈ 29.000 VND/mat</span></div>
+</div>
+
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">Phương pháp 2: TCO (so sánh với PP pad)</h3>
+<div class="calc">
+  <div class="step"><span class="op">PP pad dùng 1 lần:</span> 12.000 + 3.000 xử lý rác = <b>15.000/lần</b></div>
+  <div class="step"><span class="op">PP reusable (6 lần):</span> 22.000 ÷ 6 = <b>3.667/lần</b></div>
+  <div class="step"><span class="op">Hair mat (100 lần):</span> 29.000 ÷ 100 = <b>290/lần</b></div>
+  <div class="step"><span class="op">→ Tiết kiệm so PP pad:</span> (15.000 − 290) × 100 = <span class="res">1.471.000 VND</span></div>
+  <div class="step"><span class="op">→ Tiết kiệm so PP reusable:</span> (3.667 − 290) × 100 = <span class="res">337.700 VND</span></div>
+</div>
+
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">Phương pháp 3: Benchmark thị trường</h3>
+<table>
+  <thead><tr><th>Sản phẩm so sánh</th><th>Giá thị trường</th></tr></thead>
+  <tbody>
+  <tr><td>Kenaf mat nhập khẩu</td><td>40.000–60.000</td></tr>
+  <tr><td>PP reusable mat</td><td>15.000–22.000</td></tr>
+  <tr><td>PP pad dùng 1 lần</td><td>12.000–15.000</td></tr>
+  <tr><td>→ Hair mat định vị</td><td><b>24.000–32.000 (tiered)</b></td></tr>
+  </tbody>
+</table>
+
+<h3 style="color:var(--o);font-size:13px;margin:16px 0 8px">Chiến lược Tiered Pricing</h3>
+<table>
+  <thead><tr><th>Loại khách</th><th>Số lượng</th><th>Đơn giá</th></tr></thead>
+  <tbody>
+  <tr><td>Garage nhỏ / lẻ</td><td>1–5 thảm</td><td>32.000</td></tr>
+  <tr><td>Garage vừa</td><td>6–20 thảm</td><td>29.000</td></tr>
+  <tr><td>Xưởng lớn / B2B</td><td>21–99 thảm</td><td>26.000</td></tr>
+  <tr><td>Hợp đồng năm</td><td>100+ thảm/năm</td><td>24.000</td></tr>
+  <tr class="trs"><td>Giá bình quân gia quyền</td><td></td><td>~29.000</td></tr>
+  </tbody>
+</table>
 </div></div>
 
 <!-- ============ SO SÁNH ============ -->
@@ -290,47 +427,33 @@ tr:nth-child(even) td{background:var(--lg)}
 <div class="sh dk">⚖️ So sánh 2 giai đoạn<span class="badge">Quyết định chiến lược</span></div>
 <div class="sb">
 <table>
-  <thead><tr><th>Tiêu chí</th><th>Giai đoạn 1 (ngắn hạn)</th><th>Giai đoạn 2 (dài hạn)</th></tr></thead>
+  <thead><tr><th>Tiêu chí</th><th>Giai đoạn 1</th><th>Giai đoạn 2</th></tr></thead>
   <tbody>
   <tr><td>Thời gian</td><td>Tháng 0–18</td><td>Tháng 18–60</td></tr>
   <tr><td>Sản phẩm</td><td>Tóc sạch</td><td>Thảm hút dầu</td></tr>
-  <tr><td>Đối tượng khách</td><td>Đầu mối thu mua</td><td>Garage, xưởng, xuất khẩu</td></tr>
+  <tr><td>Giá bán</td><td>25.000–30.000/kg</td><td>24.000–32.000/mat</td></tr>
+  <tr><td>Giá mua barber</td><td>8.000–10.000/kg</td><td>10.000–12.000/kg</td></tr>
   <tr><td>CapEx</td><td>~41,5 triệu</td><td>~800 triệu</td></tr>
   <tr><td>OpEx/tháng</td><td>3–6,3 triệu</td><td>36,5–130 triệu</td></tr>
-  <tr><td>Doanh thu/tháng</td><td>2,5–29 triệu</td><td>73–584 triệu</td></tr>
-  <tr><td>Biên gộp</td><td>~20–30%</td><td>~30–47%</td></tr>
   <tr><td>EBITDA/tháng</td><td>−7,8 → −6,4 triệu</td><td>−11,4 → +152 triệu</td></tr>
   <tr><td>Rủi ro</td><td>Thấp</td><td>Trung bình</td></tr>
-  <tr><td>Độ phức tạp</td><td>Đơn giản</td><td>Phức tạp (sản xuất)</td></tr>
-  <tr><td>Khả năng scale</td><td>Nhanh, dễ</td><td>Chậm, cần vốn</td></tr>
   </tbody>
 </table>
-
-<div class="chart-box">
-  <div class="chart-title">Chi phí đầu tư — So sánh 2 giai đoạn (triệu VND)</div>
-  <div class="bar-chart">
-    <div class="bar-row"><span class="bar-label">CapEx GĐ1</span><div class="bar-track"><div class="bar-fill" style="width:5.2%;background:#43A047">41,5M</div></div><span class="bar-value">41,5</span></div>
-    <div class="bar-row"><span class="bar-label">CapEx GĐ2</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:#B71C1C">800M</div></div><span class="bar-value">800</span></div>
-    <div class="bar-row"><span class="bar-label">OpEx GĐ1</span><div class="bar-track"><div class="bar-fill" style="width:4.8%;background:#66BB6A">38M (năm)</div></div><span class="bar-value">38/năm</span></div>
-    <div class="bar-row"><span class="bar-label">OpEx GĐ2</span><div class="bar-track"><div class="bar-fill" style="width:98.4%;background:#E65100">787M (năm)</div></div><span class="bar-value">787/năm</span></div>
-  </div>
-</div>
 </div></div>
 
 <!-- ============ P&L ============ -->
 <div class="section" id="PL">
-<div class="sh g">📊 Lộ trình P&L — Từng bước<span class="badge">Toàn cảnh</span></div>
+<div class="sh g">📊 Lộ trình P&L — Toàn cảnh<span class="badge">Từng bước</span></div>
 <div class="sb">
 <table>
   <thead>
   <tr><th>Chỉ số</th><th>T1–6</th><th>T7–12</th><th>T13–18</th><th>Year 2</th><th>Year 3</th><th>Year 5</th></tr>
   </thead>
   <tbody>
-  <tr><td>Giai đoạn</td><td colspan="3" style="background:#E3F2FD;color:#0D47A1;font-weight:700">🔵 NGẮN HẠN — bán tóc</td><td colspan="3" style="background:#E8F5E9;color:#0B3D1E;font-weight:700">🟢 DÀI HẠN — bán thảm</td></tr>
+  <tr><td>Giai đoạn</td><td colspan="3" style="background:#E3F2FD;color:#0D47A1;font-weight:700">🔵 NGẮN HẠN</td><td colspan="3" style="background:#E8F5E9;color:#0B3D1E;font-weight:700">🟢 DÀI HẠN</td></tr>
   <tr><td>Barbers</td><td>9</td><td>30</td><td>80</td><td>100</td><td>200</td><td>600</td></tr>
   <tr><td>Volume (kg/tháng)</td><td>102</td><td>352</td><td>970</td><td>1.259</td><td>2.639</td><td>8.463</td></tr>
-  <tr><td>Sản phẩm</td><td>Tóc</td><td>Tóc</td><td>Tóc</td><td colspan="3" style="color:var(--g);font-weight:700">Thảm hút dầu</td></tr>
-  <tr><td>Giá bán</td><td>25.000/kg</td><td>28.000/kg</td><td>30.000/kg</td><td>29.000/mat</td><td>32.500/mat</td><td>34.500/mat</td></tr>
+  <tr><td>Sản phẩm</td><td>Tóc</td><td>Tóc</td><td>Tóc</td><td colspan="3" style="color:var(--g);font-weight:700">Thảm</td></tr>
   <tr class="trs"><td>DOANH THU/THÁNG</td><td>2.550.000</td><td>9.856.000</td><td>29.100.000</td><td>73.022.000</td><td>171.535.000</td><td>583.947.000</td></tr>
   <tr class="trs"><td>LỢI NHUẬN GỘP/THÁNG</td><td class="neg">−4.768.000</td><td class="neg">−5.012.000</td><td class="neg">−130.000</td><td class="pos">21.552.600</td><td class="pos">65.922.800</td><td class="pos">274.406.100</td></tr>
   <tr><td>Fixed OpEx/tháng</td><td>3.000.000</td><td>4.600.000</td><td>6.300.000</td><td>33.000.000</td><td>63.000.000</td><td>122.000.000</td></tr>
@@ -348,19 +471,6 @@ tr:nth-child(even) td{background:var(--lg)}
     <div class="col"><div class="col-bar" style="height:1.9%;background:#43A047"><span>+2,9</span></div><div class="col-lbl">Year 3</div><div class="col-sub">GĐ2</div></div>
     <div class="col"><div class="col-bar" style="height:100%;background:#1B5E20"><span>+152,4</span></div><div class="col-lbl">Year 5</div><div class="col-sub">GĐ2</div></div>
   </div>
-  <div class="legend">
-    <span><i style="background:#B71C1C"></i>Lỗ nhiều</span>
-    <span><i style="background:#E65100"></i>Lỗ nhẹ</span>
-    <span><i style="background:#43A047"></i>Hòa vốn</span>
-    <span><i style="background:#1B5E20"></i>Lãi lớn</span>
-  </div>
-</div>
-
-<h3 style="color:var(--g);font-size:13px;margin:16px 0 8px">🎯 Điểm hòa vốn</h3>
-<div class="calc">
-  <div class="step"><span class="op">GĐ1:</span> Lỗ có kiểm soát, không cần hòa vốn — đây là giai đoạn học hỏi & xây dựng</div>
-  <div class="step"><span class="op">GĐ2:</span> Hòa vốn lần đầu ở Year 3 (+2,9M/tháng)</div>
-  <div class="step"><span class="op">GĐ2:</span> Lãi rõ rệt từ Year 4 (+75M/tháng)</div>
 </div>
 
 <div class="timeline">
@@ -381,13 +491,8 @@ tr:nth-child(even) td{background:var(--lg)}
 <div class="sb">
 <div class="pilot">
   <b>Mục tiêu:</b> Xác thực mô hình giai đoạn 1 bằng số liệu thực trước khi scale.<br><br>
-  <b>Chi phí pilot:</b> ~30 triệu VND (CapEx tối giản 41,5M có thể chia giai đoạn, chỉ dùng 20M trong 3 tháng đầu + 10M vận hành).<br><br>
-  <b>Phạm vi:</b>
-  <ul style="margin-left:20px;margin-top:6px">
-    <li>9 barbers 4RAU (pilot chính)</li>
-    <li>1 hub nhỏ tại Nhà Bè (20–30 m², chia sẻ)</li>
-    <li>2–3 đầu mối thu mua (test giá bán)</li>
-  </ul>
+  <b>Chi phí pilot:</b> ~30 triệu VND (CapEx tối giản dùng 20M + 10M vận hành).<br><br>
+  <b>Phạm vi:</b> 9 barbers 4RAU + 1 hub nhỏ 20–30 m² tại Nhà Bè + 2–3 đầu mối thu mua.<br><br>
   <b>Chỉ số cần đo:</b>
   <ul style="margin-left:20px;margin-top:6px">
     <li>kg tóc thực thu/tuần (kiểm tra CE)</li>
@@ -402,8 +507,7 @@ tr:nth-child(even) td{background:var(--lg)}
 
 <div class="footer">
   <strong>HairCycle — Chiến lược 2 giai đoạn</strong> · Pilot: 4RAU Barber × 9 cơ sở HCMC<br>
-  GĐ1: Thu gom & bán tóc · GĐ2: Tự sản xuất thảm<br>
-  Nguồn: Savills VN Industrial 2024 · mystorage.vn · AhaMove · Alibaba Hair Traders<br>
+  Nguồn: Savills VN Industrial 2024 · mystorage.vn · AhaMove · Alibaba Hair Traders · Capilli Trading Philippines<br>
   Số liệu là ước tính có căn cứ · r = 12%/năm · Thuế TNDN 20%
 </div>
 
